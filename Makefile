@@ -141,6 +141,32 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named md_echo_server
+
+# Build rule for target.
+md_echo_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 md_echo_server
+.PHONY : md_echo_server
+
+# fast build rule for target.
+md_echo_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/build
+.PHONY : md_echo_server/fast
+
+#=============================================================================
+# Target rules for targets named md_echo_client
+
+# Build rule for target.
+md_echo_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 md_echo_client
+.PHONY : md_echo_client
+
+# fast build rule for target.
+md_echo_client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/build
+.PHONY : md_echo_client/fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -168,6 +194,60 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test/md_echo_client.obj: test/md_echo_client.cpp.obj
+
+.PHONY : test/md_echo_client.obj
+
+# target to build an object file
+test/md_echo_client.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/test/md_echo_client.cpp.obj
+.PHONY : test/md_echo_client.cpp.obj
+
+test/md_echo_client.i: test/md_echo_client.cpp.i
+
+.PHONY : test/md_echo_client.i
+
+# target to preprocess a source file
+test/md_echo_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/test/md_echo_client.cpp.i
+.PHONY : test/md_echo_client.cpp.i
+
+test/md_echo_client.s: test/md_echo_client.cpp.s
+
+.PHONY : test/md_echo_client.s
+
+# target to generate assembly for a file
+test/md_echo_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/test/md_echo_client.cpp.s
+.PHONY : test/md_echo_client.cpp.s
+
+test/md_echo_server.obj: test/md_echo_server.cpp.obj
+
+.PHONY : test/md_echo_server.obj
+
+# target to build an object file
+test/md_echo_server.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/test/md_echo_server.cpp.obj
+.PHONY : test/md_echo_server.cpp.obj
+
+test/md_echo_server.i: test/md_echo_server.cpp.i
+
+.PHONY : test/md_echo_server.i
+
+# target to preprocess a source file
+test/md_echo_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/test/md_echo_server.cpp.i
+.PHONY : test/md_echo_server.cpp.i
+
+test/md_echo_server.s: test/md_echo_server.cpp.s
+
+.PHONY : test/md_echo_server.s
+
+# target to generate assembly for a file
+test/md_echo_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/test/md_echo_server.cpp.s
+.PHONY : test/md_echo_server.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -177,9 +257,17 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... main
+	@echo ... md_echo_client
+	@echo ... md_echo_server
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... test/md_echo_client.obj
+	@echo ... test/md_echo_client.i
+	@echo ... test/md_echo_client.s
+	@echo ... test/md_echo_server.obj
+	@echo ... test/md_echo_server.i
+	@echo ... test/md_echo_server.s
 .PHONY : help
 
 

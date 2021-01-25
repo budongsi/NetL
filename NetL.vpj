@@ -65,7 +65,7 @@
             Deletable="0"
             SaveOption="SaveNone"
             RunFromDir="%rw">
-            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\main.exe "%o"'/>
+            <Exec CmdLine='"%(VSLICKBIN1)vsdebugio" -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\md_echo_server.exe'/>
          </Target>
          <Target
             Name="Execute"
@@ -76,7 +76,7 @@
             Deletable="0"
             SaveOption="SaveWorkspaceFiles"
             RunFromDir="%rw">
-            <Exec CmdLine='"%o"'/>
+            <Exec CmdLine="C:\cygwin64\home\traceur\projects\NetL\bin\md_echo_server.exe"/>
          </Target>
          <Target
             Name="dash"
@@ -206,7 +206,7 @@
             Deletable="0"
             SaveOption="SaveNone"
             RunFromDir="%rw">
-            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\main.exe "%o"'/>
+            <Exec CmdLine='"%(VSLICKBIN1)vsdebugio" -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\md_echo_server.exe'/>
          </Target>
          <Target
             Name="Execute"
@@ -217,7 +217,7 @@
             Deletable="0"
             SaveOption="SaveWorkspaceFiles"
             RunFromDir="%rw">
-            <Exec CmdLine='"%o"'/>
+            <Exec CmdLine="C:\cygwin64\home\traceur\projects\NetL\bin\md_echo_server.exe"/>
          </Target>
          <Target
             Name="dash"

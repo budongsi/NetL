@@ -21,5 +21,13 @@ add_executable(main
 	 main.cpp
 	 )
 
+add_executable(md_echo_server
+	 test/md_echo_server.cpp
+	 )
+
+add_executable(md_echo_client
+	 test/md_echo_client.cpp
+	 )
+
 
 
