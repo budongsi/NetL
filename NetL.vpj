@@ -1,0 +1,369 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+   Version="10.0"
+   VendorName="SlickEdit"
+   TemplateName="GNU C/C++"
+   WorkingDir="./"
+   BuildSystem=""
+   BuildMakeFile=""
+   BuildMakeJobs="">
+   <Config
+      Name="Debug"
+      Type="gnuc"
+      DebugCallbackName="gdb"
+      Version="1"
+      OutputFile="b.exe"
+      CompilerConfigName="Latest Version"
+      Defines="">
+      <Menu>
+         <Target
+            Name="Compile"
+            MenuCaption="&amp;Compile"
+            Dialog="_gnuc_options_form Compile"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            OutputExts="*.o"
+            SaveOption="SaveCurrent"
+            RunFromDir="%rw">
+            <Exec CmdLine='-c -c %xup %defd -g -ggdb -o "%bd%n%oe" %i %f'/>
+         </Target>
+         <Target
+            Name="Link"
+            MenuCaption="&amp;Link"
+            ShowOnMenu="Never"
+            Dialog="_gnuc_options_form Link"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveCurrent"
+            RunFromDir="%rw">
+            <Exec CmdLine='C:\cygwin64\bin\g++.exe %xup -g -ggdb -o "%o" %objs'/>
+         </Target>
+         <Target
+            Name="Build"
+            MenuCaption="&amp;Build"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec CmdLine="make"/>
+         </Target>
+         <Target
+            Name="Rebuild"
+            MenuCaption="&amp;Rebuild"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec CmdLine=""/>
+         </Target>
+         <Target
+            Name="Debug"
+            MenuCaption="&amp;Debug"
+            Dialog="_gnuc_options_form Run/Debug"
+            BuildFirst="1"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveNone"
+            RunFromDir="%rw">
+            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\main.exe "%o"'/>
+         </Target>
+         <Target
+            Name="Execute"
+            MenuCaption="E&amp;xecute"
+            Dialog="_gnuc_options_form Run/Debug"
+            BuildFirst="1"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec CmdLine='"%o"'/>
+         </Target>
+         <Target
+            Name="dash"
+            MenuCaption="-"
+            Deletable="0">
+            <Exec/>
+         </Target>
+         <Target
+            Name="GNU C Options"
+            MenuCaption="GNU C &amp;Options..."
+            ShowOnMenu="HideIfNoCmdLine"
+            Deletable="0"
+            SaveOption="SaveNone">
+            <Exec
+               CmdLine="gnucoptions"
+               Type="Slick-C"/>
+         </Target>
+         <Target
+            Name="make"
+            MenuCaption="make"
+            RunFromDir="C:\cygwin64\home\traceur\projects\NetL\"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveNone">
+            <Exec CmdLine="make.exe"/>
+         </Target>
+      </Menu>
+      <Rules Name="Compile">
+         <Rule
+            InputExts="*.ada"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gnat -g -c -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.adb"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gnat -g -c -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.f"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gfortran -c -g -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.f90"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gfortran -c -g -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.d"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gdc -c -g -o "%bd%n.o" "%f"'/>
+         </Rule>
+      </Rules>
+      <List Name="GNUC Options">
+         <Item
+            Name="LinkerOutputType"
+            Value="Executable"/>
+      </List>
+      <Includes>
+         <Include Dir="C:/cygwin64/usr/include/"/>
+      </Includes>
+      <Libs PreObjects="0"/>
+      <PreBuildCommands>
+         <Exec CmdLine="CMake_Generate_Makefile.bat"/>
+      </PreBuildCommands>
+   </Config>
+   <Config
+      Name="Release"
+      Type="gnuc"
+      DebugCallbackName="gdb"
+      Version="1"
+      OutputFile="%bdNetL.exe"
+      CompilerConfigName="Latest Version"
+      Defines="">
+      <Menu>
+         <Target
+            Name="Compile"
+            MenuCaption="&amp;Compile"
+            Dialog="_gnuc_options_form Compile"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            OutputExts="*.o"
+            SaveOption="SaveCurrent"
+            RunFromDir="%rw">
+            <Exec CmdLine='-c -c %xup %defd -o "%bd%n%oe" %i %f'/>
+         </Target>
+         <Target
+            Name="Link"
+            MenuCaption="&amp;Link"
+            ShowOnMenu="Never"
+            Dialog="_gnuc_options_form Link"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveCurrent"
+            RunFromDir="%rw">
+            <Exec CmdLine='C:\cygwin64\bin\g++.exe %xup -o "%o" %objs'/>
+         </Target>
+         <Target
+            Name="Build"
+            MenuCaption="&amp;Build"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec CmdLine="make"/>
+         </Target>
+         <Target
+            Name="Rebuild"
+            MenuCaption="&amp;Rebuild"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec CmdLine=""/>
+         </Target>
+         <Target
+            Name="Debug"
+            MenuCaption="&amp;Debug"
+            Dialog="_gnuc_options_form Run/Debug"
+            BuildFirst="1"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveNone"
+            RunFromDir="%rw">
+            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\main.exe "%o"'/>
+         </Target>
+         <Target
+            Name="Execute"
+            MenuCaption="E&amp;xecute"
+            Dialog="_gnuc_options_form Run/Debug"
+            BuildFirst="1"
+            CaptureOutputWith="ProcessBuffer"
+            Deletable="0"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec CmdLine='"%o"'/>
+         </Target>
+         <Target
+            Name="dash"
+            MenuCaption="-"
+            Deletable="0">
+            <Exec/>
+         </Target>
+         <Target
+            Name="GNU C Options"
+            MenuCaption="GNU C &amp;Options..."
+            ShowOnMenu="HideIfNoCmdLine"
+            Deletable="0"
+            SaveOption="SaveNone">
+            <Exec
+               CmdLine="gnucoptions"
+               Type="Slick-C"/>
+         </Target>
+         <Target
+            Name="make"
+            MenuCaption="make"
+            RunFromDir="C:\cygwin64\home\traceur\projects\NetL\"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveNone">
+            <Exec CmdLine="make.exe"/>
+         </Target>
+      </Menu>
+      <Rules Name="Compile">
+         <Rule
+            InputExts="*.ada"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gnat -O -c -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.adb"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gnat -O -c -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.f"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gfortran -O -g -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.f90"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gfortran -O -g -o "%bd%n.o" "%f"'/>
+         </Rule>
+         <Rule
+            InputExts="*.d"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='gdc -c -g -o "%bd%n.o" "%f"'/>
+         </Rule>
+      </Rules>
+      <List Name="GNUC Options">
+         <Item
+            Name="LinkerOutputType"
+            Value="Executable"/>
+      </List>
+      <Includes>
+         <Include Dir="C:/cygwin64/usr/include/"/>
+      </Includes>
+      <Libs PreObjects="0"/>
+      <PreBuildCommands>
+         <Exec CmdLine="CMake_Generate_Makefile.bat"/>
+      </PreBuildCommands>
+   </Config>
+   <Files>
+      <Folder
+         Name="Source Files"
+         Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.scala;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go;*.groovy;*.gsh"
+         GUID="{A1656D55-D844-4834-A6A0-38A746486F81}">
+         <F N="CMakeFiles/3.19.3/CompilerIdC/CMakeCCompilerId.c"/>
+         <F N="CMakeFiles/3.19.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"/>
+         <F N="main.cpp"/>
+      </Folder>
+      <Folder
+         Name="Header Files"
+         Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"
+         GUID="{56F03A85-8501-464D-9019-8C26DF8B0B48}"/>
+      <Folder
+         Name="Resource Files"
+         Filters="*.ico;*.cur;*.dlg"
+         GUID="{2E6464CD-856C-4F0D-9D0A-72CA3BF4754E}"/>
+      <Folder
+         Name="Bitmaps"
+         Filters="*.bmp"
+         GUID="{509CAD99-6EF1-433D-B028-B39A45F9CB08}"/>
+      <Folder
+         Name="Other Files"
+         Filters=""
+         GUID="{1BBAFC13-5983-44A2-9456-306DD0FC199E}">
+         <F N="CMakeFiles/3.19.3/CompilerIdC/a.exe"/>
+         <F N="CMakeFiles/3.19.3/CompilerIdCXX/a.exe"/>
+         <F N="CMakeFiles/main.dir/build.make"/>
+         <F N=".vscode/c_cpp_properties.json"/>
+         <F N="CMakeFiles/cmake.check_cache"/>
+         <F N="CMakeFiles/main.dir/cmake_clean.cmake"/>
+         <F N="CMake_Generate_Makefile.bat"/>
+         <F N="cmake_install.cmake"/>
+         <F N="CMakeCache.txt"/>
+         <F N="CMakeFiles/3.19.3/CMakeCCompiler.cmake"/>
+         <F N="CMakeFiles/3.19.3/CMakeCXXCompiler.cmake"/>
+         <F N="CMakeFiles/CMakeDirectoryInformation.cmake"/>
+         <F N="CMakeFiles/CMakeError.log"/>
+         <F N="CMakeLists.txt"/>
+         <F N="CMakeFiles/CMakeOutput.log"/>
+         <F N="CMakeFiles/3.19.3/CMakeRCCompiler.cmake"/>
+         <F N="CMakeFiles/3.19.3/CMakeSystem.cmake"/>
+         <F N="CMakeFiles/main.dir/CXX.includecache"/>
+         <F N="bin/cyggcc_s-seh-1.dll"/>
+         <F N="bin/cygstdc++-6.dll"/>
+         <F N="bin/cygwin1.dll"/>
+         <F N="CMakeFiles/main.dir/depend.internal"/>
+         <F N="CMakeFiles/main.dir/depend.make"/>
+         <F N="CMakeFiles/main.dir/DependInfo.cmake"/>
+         <F N="CMakeFiles/main.dir/flags.make"/>
+         <F N="CMakeFiles/main.dir/includes_CXX.rsp"/>
+         <F N=".vscode/launch.json"/>
+         <F N="libiconv2.dll"/>
+         <F N="libintl3.dll"/>
+         <F N="CMakeFiles/main.dir/link.txt"/>
+         <F N="CMakeFiles/main.dir/main.cpp.obj"/>
+         <F N="bin/main.exe"/>
+         <F N="make.exe"/>
+         <F N="Makefile"/>
+         <F N="CMakeFiles/Makefile.cmake"/>
+         <F N="CMakeFiles/Makefile2"/>
+         <F N="NetL/Debug/NetL.vpb"/>
+         <F N="NetL.vpj"/>
+         <F N="NetL.vpw"/>
+         <F N="NetL.vpwhist"/>
+         <F N="NetL.vtg"/>
+         <F N="CMakeFiles/main.dir/objects.a"/>
+         <F N="CMakeFiles/main.dir/objects1.rsp"/>
+         <F N="CMakeFiles/main.dir/progress.make"/>
+         <F N="CMakeFiles/progress.marks"/>
+         <F N=".vscode/settings.json"/>
+         <F N="CMakeFiles/TargetDirectories.txt"/>
+         <F N=".vscode/tasks.json"/>
+      </Folder>
+   </Files>
+   <List Name="RTE">
+   </List>
+</Project>
