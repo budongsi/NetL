@@ -29,5 +29,13 @@ add_executable(md_echo_client
 	 test/md_echo_client.cpp
 	 )
 
+add_executable(unp_echo_server
+	 test/unp_echo_server.cpp
+	 )
+
+add_executable(unp_echo_client
+	 test/unp_echo_client.cpp
+	 )
+
 
 
