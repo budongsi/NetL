@@ -9,6 +9,7 @@
 #include <sys/poll.h>
 
 using namespace std;
+using namespace NetL::Net;
 
 static __thread EventLoop* t_loopInThisThread = nullptr;
 
