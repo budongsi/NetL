@@ -74,17 +74,6 @@ CMAKE_BINARY_DIR = C:\cygwin64\home\traceur\projects\NetL
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	"C:\Program Files\CMake\bin\cmake-gui.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -95,6 +84,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	"C:\Program Files\CMake\bin\cmake-gui.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -129,43 +129,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named gtest_EventLoopClass
+# Target rules for targets named mtest_EventLoopClass_03
 
 # Build rule for target.
-gtest_EventLoopClass: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_EventLoopClass
-.PHONY : gtest_EventLoopClass
+mtest_EventLoopClass_03: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mtest_EventLoopClass_03
+.PHONY : mtest_EventLoopClass_03
 
 # fast build rule for target.
-gtest_EventLoopClass/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/build
-.PHONY : gtest_EventLoopClass/fast
+mtest_EventLoopClass_03/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/build
+.PHONY : mtest_EventLoopClass_03/fast
 
-#=============================================================================
-# Target rules for targets named mtest_EventLoopClass_01
+NetL/Channel.obj: NetL/Channel.cpp.obj
 
-# Build rule for target.
-mtest_EventLoopClass_01: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mtest_EventLoopClass_01
-.PHONY : mtest_EventLoopClass_01
+.PHONY : NetL/Channel.obj
 
-# fast build rule for target.
-mtest_EventLoopClass_01/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/build
-.PHONY : mtest_EventLoopClass_01/fast
+# target to build an object file
+NetL/Channel.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Channel.cpp.obj
+.PHONY : NetL/Channel.cpp.obj
 
-#=============================================================================
-# Target rules for targets named mtest_EventLoopClass_02
+NetL/Channel.i: NetL/Channel.cpp.i
 
-# Build rule for target.
-mtest_EventLoopClass_02: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mtest_EventLoopClass_02
-.PHONY : mtest_EventLoopClass_02
+.PHONY : NetL/Channel.i
 
-# fast build rule for target.
-mtest_EventLoopClass_02/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/build
-.PHONY : mtest_EventLoopClass_02/fast
+# target to preprocess a source file
+NetL/Channel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Channel.cpp.i
+.PHONY : NetL/Channel.cpp.i
+
+NetL/Channel.s: NetL/Channel.cpp.s
+
+.PHONY : NetL/Channel.s
+
+# target to generate assembly for a file
+NetL/Channel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Channel.cpp.s
+.PHONY : NetL/Channel.cpp.s
 
 NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
 
@@ -173,9 +174,7 @@ NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
 
 # target to build an object file
 NetL/EventLoop.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/NetL/EventLoop.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/NetL/EventLoop.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/NetL/EventLoop.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/EventLoop.cpp.obj
 .PHONY : NetL/EventLoop.cpp.obj
 
 NetL/EventLoop.i: NetL/EventLoop.cpp.i
@@ -184,9 +183,7 @@ NetL/EventLoop.i: NetL/EventLoop.cpp.i
 
 # target to preprocess a source file
 NetL/EventLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/NetL/EventLoop.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/NetL/EventLoop.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/NetL/EventLoop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/EventLoop.cpp.i
 .PHONY : NetL/EventLoop.cpp.i
 
 NetL/EventLoop.s: NetL/EventLoop.cpp.s
@@ -195,91 +192,62 @@ NetL/EventLoop.s: NetL/EventLoop.cpp.s
 
 # target to generate assembly for a file
 NetL/EventLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/NetL/EventLoop.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/NetL/EventLoop.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/NetL/EventLoop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/EventLoop.cpp.s
 .PHONY : NetL/EventLoop.cpp.s
 
-test/gtest_EventLoopClass.obj: test/gtest_EventLoopClass.cpp.obj
+NetL/Poller.obj: NetL/Poller.cpp.obj
 
-.PHONY : test/gtest_EventLoopClass.obj
-
-# target to build an object file
-test/gtest_EventLoopClass.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/test/gtest_EventLoopClass.cpp.obj
-.PHONY : test/gtest_EventLoopClass.cpp.obj
-
-test/gtest_EventLoopClass.i: test/gtest_EventLoopClass.cpp.i
-
-.PHONY : test/gtest_EventLoopClass.i
-
-# target to preprocess a source file
-test/gtest_EventLoopClass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/test/gtest_EventLoopClass.cpp.i
-.PHONY : test/gtest_EventLoopClass.cpp.i
-
-test/gtest_EventLoopClass.s: test/gtest_EventLoopClass.cpp.s
-
-.PHONY : test/gtest_EventLoopClass.s
-
-# target to generate assembly for a file
-test/gtest_EventLoopClass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/test/gtest_EventLoopClass.cpp.s
-.PHONY : test/gtest_EventLoopClass.cpp.s
-
-test/mtest_EventLoopClass_01.obj: test/mtest_EventLoopClass_01.cpp.obj
-
-.PHONY : test/mtest_EventLoopClass_01.obj
+.PHONY : NetL/Poller.obj
 
 # target to build an object file
-test/mtest_EventLoopClass_01.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/test/mtest_EventLoopClass_01.cpp.obj
-.PHONY : test/mtest_EventLoopClass_01.cpp.obj
+NetL/Poller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Poller.cpp.obj
+.PHONY : NetL/Poller.cpp.obj
 
-test/mtest_EventLoopClass_01.i: test/mtest_EventLoopClass_01.cpp.i
+NetL/Poller.i: NetL/Poller.cpp.i
 
-.PHONY : test/mtest_EventLoopClass_01.i
+.PHONY : NetL/Poller.i
 
 # target to preprocess a source file
-test/mtest_EventLoopClass_01.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/test/mtest_EventLoopClass_01.cpp.i
-.PHONY : test/mtest_EventLoopClass_01.cpp.i
+NetL/Poller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Poller.cpp.i
+.PHONY : NetL/Poller.cpp.i
 
-test/mtest_EventLoopClass_01.s: test/mtest_EventLoopClass_01.cpp.s
+NetL/Poller.s: NetL/Poller.cpp.s
 
-.PHONY : test/mtest_EventLoopClass_01.s
+.PHONY : NetL/Poller.s
 
 # target to generate assembly for a file
-test/mtest_EventLoopClass_01.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_01.dir\build.make CMakeFiles/mtest_EventLoopClass_01.dir/test/mtest_EventLoopClass_01.cpp.s
-.PHONY : test/mtest_EventLoopClass_01.cpp.s
+NetL/Poller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Poller.cpp.s
+.PHONY : NetL/Poller.cpp.s
 
-test/mtest_EventLoopClass_02.obj: test/mtest_EventLoopClass_02.cpp.obj
+test/mtest_EventLoopClass_03.obj: test/mtest_EventLoopClass_03.cpp.obj
 
-.PHONY : test/mtest_EventLoopClass_02.obj
+.PHONY : test/mtest_EventLoopClass_03.obj
 
 # target to build an object file
-test/mtest_EventLoopClass_02.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/test/mtest_EventLoopClass_02.cpp.obj
-.PHONY : test/mtest_EventLoopClass_02.cpp.obj
+test/mtest_EventLoopClass_03.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/test/mtest_EventLoopClass_03.cpp.obj
+.PHONY : test/mtest_EventLoopClass_03.cpp.obj
 
-test/mtest_EventLoopClass_02.i: test/mtest_EventLoopClass_02.cpp.i
+test/mtest_EventLoopClass_03.i: test/mtest_EventLoopClass_03.cpp.i
 
-.PHONY : test/mtest_EventLoopClass_02.i
+.PHONY : test/mtest_EventLoopClass_03.i
 
 # target to preprocess a source file
-test/mtest_EventLoopClass_02.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/test/mtest_EventLoopClass_02.cpp.i
-.PHONY : test/mtest_EventLoopClass_02.cpp.i
+test/mtest_EventLoopClass_03.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/test/mtest_EventLoopClass_03.cpp.i
+.PHONY : test/mtest_EventLoopClass_03.cpp.i
 
-test/mtest_EventLoopClass_02.s: test/mtest_EventLoopClass_02.cpp.s
+test/mtest_EventLoopClass_03.s: test/mtest_EventLoopClass_03.cpp.s
 
-.PHONY : test/mtest_EventLoopClass_02.s
+.PHONY : test/mtest_EventLoopClass_03.s
 
 # target to generate assembly for a file
-test/mtest_EventLoopClass_02.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_02.dir\build.make CMakeFiles/mtest_EventLoopClass_02.dir/test/mtest_EventLoopClass_02.cpp.s
-.PHONY : test/mtest_EventLoopClass_02.cpp.s
+test/mtest_EventLoopClass_03.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/test/mtest_EventLoopClass_03.cpp.s
+.PHONY : test/mtest_EventLoopClass_03.cpp.s
 
 # Help Target
 help:
@@ -289,21 +257,19 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... gtest_EventLoopClass
-	@echo ... mtest_EventLoopClass_01
-	@echo ... mtest_EventLoopClass_02
+	@echo ... mtest_EventLoopClass_03
+	@echo ... NetL/Channel.obj
+	@echo ... NetL/Channel.i
+	@echo ... NetL/Channel.s
 	@echo ... NetL/EventLoop.obj
 	@echo ... NetL/EventLoop.i
 	@echo ... NetL/EventLoop.s
-	@echo ... test/gtest_EventLoopClass.obj
-	@echo ... test/gtest_EventLoopClass.i
-	@echo ... test/gtest_EventLoopClass.s
-	@echo ... test/mtest_EventLoopClass_01.obj
-	@echo ... test/mtest_EventLoopClass_01.i
-	@echo ... test/mtest_EventLoopClass_01.s
-	@echo ... test/mtest_EventLoopClass_02.obj
-	@echo ... test/mtest_EventLoopClass_02.i
-	@echo ... test/mtest_EventLoopClass_02.s
+	@echo ... NetL/Poller.obj
+	@echo ... NetL/Poller.i
+	@echo ... NetL/Poller.s
+	@echo ... test/mtest_EventLoopClass_03.obj
+	@echo ... test/mtest_EventLoopClass_03.i
+	@echo ... test/mtest_EventLoopClass_03.s
 .PHONY : help
 
 

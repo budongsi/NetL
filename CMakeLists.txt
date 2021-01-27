@@ -38,7 +38,6 @@ add_executable(unp_echo_server
 add_executable(unp_echo_client
 	 test/unp_echo_client.cpp
 	 )
-]]
 
 add_executable(gtest_EventLoopClass
 	 NetL/EventLoop.cpp
@@ -54,7 +53,14 @@ add_executable(mtest_EventLoopClass_02
 	 NetL/EventLoop.cpp
 	 test/mtest_EventLoopClass_02.cpp
 )
+]]
 
+add_executable(mtest_EventLoopClass_03
+	 NetL/Poller.cpp
+	 NetL/Channel.cpp
+	 NetL/EventLoop.cpp
+	 test/mtest_EventLoopClass_03.cpp
+)
 
 
 
