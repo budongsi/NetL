@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "NetL/EventLoop.h"
+#include <gtest/gtest.h>
 
 TEST(EventLoopClass,DefautConstructor)
 {

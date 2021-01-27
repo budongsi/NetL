@@ -45,5 +45,18 @@ add_executable(gtest_EventLoopClass
 	 test/gtest_EventLoopClass.cpp
 )
 
+add_executable(mtest_EventLoopClass_01
+	 NetL/EventLoop.cpp
+	 test/mtest_EventLoopClass_01.cpp
+)
+
+add_executable(mtest_EventLoopClass_02
+	 NetL/EventLoop.cpp
+	 test/mtest_EventLoopClass_02.cpp
+)
+
+
+
+
 
 

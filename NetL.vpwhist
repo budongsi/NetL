@@ -5,7 +5,20 @@ NetL.vpj=20210127020128398
 [ActiveConfig]
 NetL.vpj=Debug
 [TreeExpansion2]
-+@ NetL.vpj
+-@ NetL.vpj
+  + CMakeFiles
+    + 3.19.3
+      + CompilerIdC
+      + CompilerIdCXX
+    + gtest_EventLoopClass.dir
+    + main.dir
+    + md_echo_client.dir
+    + md_echo_server.dir
+    + test00.dir
+    + unp_echo_client.dir
+    + unp_echo_server.dir
+  + NetL
+  + test
 scroll:0
 [State]
 MONITOR_CONFIGS: 900
