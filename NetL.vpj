@@ -12,10 +12,18 @@
       Type="gnuc"
       DebugCallbackName="gdb"
       Version="1"
-      OutputFile="b.exe"
+      OutputFile="%rw/bin/%n.exe"
       CompilerConfigName="Latest Version"
       Defines="">
       <Menu>
+         <Target
+            Name="run"
+            MenuCaption="&amp;Run"
+            RunFromDir="%rw"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveNone">
+            <Exec CmdLine="bin\%n.exe"/>
+         </Target>
          <Target
             Name="Compile"
             MenuCaption="&amp;Compile"
@@ -24,8 +32,9 @@
             Deletable="0"
             OutputExts="*.o"
             SaveOption="SaveCurrent"
-            RunFromDir="%rw">
-            <Exec CmdLine='-c -c %xup %defd -g -ggdb -o "%bd%n%oe" %i %f'/>
+            RunFromDir="%rw"
+            ClearProcessBuffer="1">
+            <Exec CmdLine='C:\cygwin64\bin\g++.exe -c %xup -x c++ %defd -g3 -ggdb -o "%bd%n%oe" %i %f'/>
          </Target>
          <Target
             Name="Link"
@@ -36,7 +45,7 @@
             Deletable="0"
             SaveOption="SaveCurrent"
             RunFromDir="%rw">
-            <Exec CmdLine='C:\cygwin64\bin\g++.exe %xup -g -ggdb -o "%o" %objs'/>
+            <Exec CmdLine='C:\cygwin64\bin\g++.exe %xup -g3 -ggdb -o "%o" %objs'/>
          </Target>
          <Target
             Name="Build"
@@ -65,7 +74,7 @@
             Deletable="0"
             SaveOption="SaveNone"
             RunFromDir="%rw">
-            <Exec CmdLine='"%(VSLICKBIN1)vsdebugio" -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe'/>
+            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe "%o"'/>
          </Target>
          <Target
             Name="Execute"
@@ -76,7 +85,7 @@
             Deletable="0"
             SaveOption="SaveWorkspaceFiles"
             RunFromDir="%rw">
-            <Exec CmdLine="C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe"/>
+            <Exec CmdLine='"%o"'/>
          </Target>
          <Target
             Name="dash"
@@ -101,6 +110,14 @@
             CaptureOutputWith="ProcessBuffer"
             SaveOption="SaveNone">
             <Exec CmdLine="make.exe"/>
+         </Target>
+         <Target
+            Name="Build and Run Current Test"
+            MenuCaption="Build and Run Current Test"
+            RunFromDir="%rw"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveNone">
+            <Exec CmdLine="C:\cygwin64\bin\g++.exe -g %f -o %rwbin\%n.exe -lgtest &amp;&amp; %rwbin\%n.exe"/>
          </Target>
       </Menu>
       <Rules Name="Compile">
@@ -141,9 +158,16 @@
             Value="Executable"/>
       </List>
       <Includes>
-         <Include Dir="C:/cygwin64/usr/include/"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include"/>
+         <Include Dir="C:/cygwin64/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
+         <Include Dir="%rw"/>
       </Includes>
-      <Libs PreObjects="0"/>
+      <Libs PreObjects="0">
+         <Lib File="../../../../lib/libgtest.a"/>
+      </Libs>
       <PreBuildCommands>
          <Exec CmdLine="CMake_Generate_Makefile.bat"/>
       </PreBuildCommands>
@@ -153,10 +177,18 @@
       Type="gnuc"
       DebugCallbackName="gdb"
       Version="1"
-      OutputFile="%bdNetL.exe"
+      OutputFile="%rw/bin/%n.exe"
       CompilerConfigName="Latest Version"
       Defines="">
       <Menu>
+         <Target
+            Name="run"
+            MenuCaption="&amp;Run"
+            RunFromDir="%rw"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveNone">
+            <Exec CmdLine="bin\%n.exe"/>
+         </Target>
          <Target
             Name="Compile"
             MenuCaption="&amp;Compile"
@@ -165,7 +197,8 @@
             Deletable="0"
             OutputExts="*.o"
             SaveOption="SaveCurrent"
-            RunFromDir="%rw">
+            RunFromDir="%rw"
+            ClearProcessBuffer="1">
             <Exec CmdLine='-c -c %xup %defd -o "%bd%n%oe" %i %f'/>
          </Target>
          <Target
@@ -206,7 +239,7 @@
             Deletable="0"
             SaveOption="SaveNone"
             RunFromDir="%rw">
-            <Exec CmdLine='"%(VSLICKBIN1)vsdebugio" -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe'/>
+            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe "%o"'/>
          </Target>
          <Target
             Name="Execute"
@@ -217,7 +250,7 @@
             Deletable="0"
             SaveOption="SaveWorkspaceFiles"
             RunFromDir="%rw">
-            <Exec CmdLine="C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe"/>
+            <Exec CmdLine='"%o"'/>
          </Target>
          <Target
             Name="dash"
@@ -242,6 +275,14 @@
             CaptureOutputWith="ProcessBuffer"
             SaveOption="SaveNone">
             <Exec CmdLine="make.exe"/>
+         </Target>
+         <Target
+            Name="Build and Run Current Test"
+            MenuCaption="Build and Run Current Test"
+            RunFromDir="%rw"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveNone">
+            <Exec CmdLine="C:\cygwin64\bin\g++.exe -g %f -o %rwbin\%n.exe -lgtest &amp;&amp; %rwbin\%n.exe"/>
          </Target>
       </Menu>
       <Rules Name="Compile">
@@ -282,22 +323,25 @@
             Value="Executable"/>
       </List>
       <Includes>
-         <Include Dir="C:/cygwin64/usr/include/"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
+         <Include Dir="C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include"/>
+         <Include Dir="C:/cygwin64/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
+         <Include Dir="%rw"/>
       </Includes>
-      <Libs PreObjects="0"/>
+      <Libs PreObjects="0">
+         <Lib File="../../../../lib/libgtest.a"/>
+      </Libs>
       <PreBuildCommands>
          <Exec CmdLine="CMake_Generate_Makefile.bat"/>
       </PreBuildCommands>
    </Config>
-   <Files>
+   <CustomFolders>
       <Folder
          Name="Source Files"
          Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.scala;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go;*.groovy;*.gsh"
-         GUID="{A1656D55-D844-4834-A6A0-38A746486F81}">
-         <F N="CMakeFiles/3.19.3/CompilerIdC/CMakeCCompilerId.c"/>
-         <F N="CMakeFiles/3.19.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"/>
-         <F N="main.cpp"/>
-      </Folder>
+         GUID="{A1656D55-D844-4834-A6A0-38A746486F81}"></Folder>
       <Folder
          Name="Header Files"
          Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"
@@ -313,57 +357,56 @@
       <Folder
          Name="Other Files"
          Filters=""
-         GUID="{1BBAFC13-5983-44A2-9456-306DD0FC199E}">
-         <F N="CMakeFiles/3.19.3/CompilerIdC/a.exe"/>
-         <F N="CMakeFiles/3.19.3/CompilerIdCXX/a.exe"/>
-         <F N="CMakeFiles/main.dir/build.make"/>
-         <F N=".vscode/c_cpp_properties.json"/>
-         <F N="CMakeFiles/cmake.check_cache"/>
-         <F N="CMakeFiles/main.dir/cmake_clean.cmake"/>
-         <F N="CMake_Generate_Makefile.bat"/>
-         <F N="cmake_install.cmake"/>
-         <F N="CMakeCache.txt"/>
-         <F N="CMakeFiles/3.19.3/CMakeCCompiler.cmake"/>
-         <F N="CMakeFiles/3.19.3/CMakeCXXCompiler.cmake"/>
-         <F N="CMakeFiles/CMakeDirectoryInformation.cmake"/>
-         <F N="CMakeFiles/CMakeError.log"/>
-         <F N="CMakeLists.txt"/>
-         <F N="CMakeFiles/CMakeOutput.log"/>
-         <F N="CMakeFiles/3.19.3/CMakeRCCompiler.cmake"/>
-         <F N="CMakeFiles/3.19.3/CMakeSystem.cmake"/>
-         <F N="CMakeFiles/main.dir/CXX.includecache"/>
-         <F N="bin/cyggcc_s-seh-1.dll"/>
-         <F N="bin/cygstdc++-6.dll"/>
-         <F N="bin/cygwin1.dll"/>
-         <F N="CMakeFiles/main.dir/depend.internal"/>
-         <F N="CMakeFiles/main.dir/depend.make"/>
-         <F N="CMakeFiles/main.dir/DependInfo.cmake"/>
-         <F N="CMakeFiles/main.dir/flags.make"/>
-         <F N="CMakeFiles/main.dir/includes_CXX.rsp"/>
-         <F N=".vscode/launch.json"/>
-         <F N="libiconv2.dll"/>
-         <F N="libintl3.dll"/>
-         <F N="CMakeFiles/main.dir/link.txt"/>
-         <F N="CMakeFiles/main.dir/main.cpp.obj"/>
-         <F N="bin/main.exe"/>
-         <F N="make.exe"/>
-         <F N="Makefile"/>
-         <F N="CMakeFiles/Makefile.cmake"/>
-         <F N="CMakeFiles/Makefile2"/>
-         <F N="NetL/Debug/NetL.vpb"/>
-         <F N="NetL.vpj"/>
-         <F N="NetL.vpw"/>
-         <F N="NetL.vpwhist"/>
-         <F N="NetL.vtg"/>
-         <F N="CMakeFiles/main.dir/objects.a"/>
-         <F N="CMakeFiles/main.dir/objects1.rsp"/>
-         <F N="CMakeFiles/main.dir/progress.make"/>
-         <F N="CMakeFiles/progress.marks"/>
-         <F N=".vscode/settings.json"/>
-         <F N="CMakeFiles/TargetDirectories.txt"/>
-         <F N=".vscode/tasks.json"/>
-      </Folder>
-   </Files>
+         GUID="{1BBAFC13-5983-44A2-9456-306DD0FC199E}"></Folder>
+   </CustomFolders>
    <List Name="RTE">
    </List>
+   <Files AutoFolders="DirectoryView">
+      <Folder Name="CMakeFiles">
+         <Folder Name="3.19.3">
+            <Folder Name="CompilerIdC">
+               <F N="CMakeFiles/3.19.3/CompilerIdC/CMakeCCompilerId.c"/>
+            </Folder>
+            <Folder Name="CompilerIdCXX">
+               <F N="CMakeFiles/3.19.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"/>
+            </Folder>
+         </Folder>
+         <Folder Name="gtest_EventLoopClass.dir">
+            <F N="CMakeFiles/gtest_EventLoopClass.dir/link.txt"/>
+         </Folder>
+         <Folder Name="main.dir">
+            <F N="CMakeFiles/main.dir/link.txt"/>
+         </Folder>
+         <Folder Name="md_echo_client.dir">
+            <F N="CMakeFiles/md_echo_client.dir/link.txt"/>
+         </Folder>
+         <Folder Name="md_echo_server.dir">
+            <F N="CMakeFiles/md_echo_server.dir/link.txt"/>
+         </Folder>
+         <Folder Name="test00.dir">
+            <F N="CMakeFiles/test00.dir/link.txt"/>
+         </Folder>
+         <Folder Name="unp_echo_client.dir">
+            <F N="CMakeFiles/unp_echo_client.dir/link.txt"/>
+         </Folder>
+         <Folder Name="unp_echo_server.dir">
+            <F N="CMakeFiles/unp_echo_server.dir/link.txt"/>
+         </Folder>
+         <F N="CMakeFiles/TargetDirectories.txt"/>
+      </Folder>
+      <Folder Name="NetL">
+         <F N="NetL/EventLoop.cpp"/>
+         <F N="NetL/EventLoop.h"/>
+      </Folder>
+      <Folder Name="test">
+         <F N="test/gtest_EventLoopClass.cpp"/>
+         <F N="test/md_echo_client.cpp"/>
+         <F N="test/md_echo_server.cpp"/>
+         <F N="test/unp_echo_client.cpp"/>
+         <F N="test/unp_echo_server.cpp"/>
+      </Folder>
+      <F N="CMakeCache.txt"/>
+      <F N="CMakeLists.txt"/>
+      <F N="main.cpp"/>
+   </Files>
 </Project>

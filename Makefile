@@ -129,204 +129,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named unp_echo_client
+# Target rules for targets named gtest_EventLoopClass
 
 # Build rule for target.
-unp_echo_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 unp_echo_client
-.PHONY : unp_echo_client
+gtest_EventLoopClass: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_EventLoopClass
+.PHONY : gtest_EventLoopClass
 
 # fast build rule for target.
-unp_echo_client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_client.dir\build.make CMakeFiles/unp_echo_client.dir/build
-.PHONY : unp_echo_client/fast
+gtest_EventLoopClass/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/build
+.PHONY : gtest_EventLoopClass/fast
 
-#=============================================================================
-# Target rules for targets named main
+NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
 
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named md_echo_server
-
-# Build rule for target.
-md_echo_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 md_echo_server
-.PHONY : md_echo_server
-
-# fast build rule for target.
-md_echo_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/build
-.PHONY : md_echo_server/fast
-
-#=============================================================================
-# Target rules for targets named md_echo_client
-
-# Build rule for target.
-md_echo_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 md_echo_client
-.PHONY : md_echo_client
-
-# fast build rule for target.
-md_echo_client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/build
-.PHONY : md_echo_client/fast
-
-#=============================================================================
-# Target rules for targets named unp_echo_server
-
-# Build rule for target.
-unp_echo_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 unp_echo_server
-.PHONY : unp_echo_server
-
-# fast build rule for target.
-unp_echo_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_server.dir\build.make CMakeFiles/unp_echo_server.dir/build
-.PHONY : unp_echo_server/fast
-
-main.obj: main.cpp.obj
-
-.PHONY : main.obj
+.PHONY : NetL/EventLoop.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+NetL/EventLoop.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/NetL/EventLoop.cpp.obj
+.PHONY : NetL/EventLoop.cpp.obj
 
-main.i: main.cpp.i
+NetL/EventLoop.i: NetL/EventLoop.cpp.i
 
-.PHONY : main.i
+.PHONY : NetL/EventLoop.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+NetL/EventLoop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/NetL/EventLoop.cpp.i
+.PHONY : NetL/EventLoop.cpp.i
 
-main.s: main.cpp.s
+NetL/EventLoop.s: NetL/EventLoop.cpp.s
 
-.PHONY : main.s
+.PHONY : NetL/EventLoop.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+NetL/EventLoop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/NetL/EventLoop.cpp.s
+.PHONY : NetL/EventLoop.cpp.s
 
-test/md_echo_client.obj: test/md_echo_client.cpp.obj
+test/gtest_EventLoopClass.obj: test/gtest_EventLoopClass.cpp.obj
 
-.PHONY : test/md_echo_client.obj
+.PHONY : test/gtest_EventLoopClass.obj
 
 # target to build an object file
-test/md_echo_client.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/test/md_echo_client.cpp.obj
-.PHONY : test/md_echo_client.cpp.obj
+test/gtest_EventLoopClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/test/gtest_EventLoopClass.cpp.obj
+.PHONY : test/gtest_EventLoopClass.cpp.obj
 
-test/md_echo_client.i: test/md_echo_client.cpp.i
+test/gtest_EventLoopClass.i: test/gtest_EventLoopClass.cpp.i
 
-.PHONY : test/md_echo_client.i
-
-# target to preprocess a source file
-test/md_echo_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/test/md_echo_client.cpp.i
-.PHONY : test/md_echo_client.cpp.i
-
-test/md_echo_client.s: test/md_echo_client.cpp.s
-
-.PHONY : test/md_echo_client.s
-
-# target to generate assembly for a file
-test/md_echo_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_client.dir\build.make CMakeFiles/md_echo_client.dir/test/md_echo_client.cpp.s
-.PHONY : test/md_echo_client.cpp.s
-
-test/md_echo_server.obj: test/md_echo_server.cpp.obj
-
-.PHONY : test/md_echo_server.obj
-
-# target to build an object file
-test/md_echo_server.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/test/md_echo_server.cpp.obj
-.PHONY : test/md_echo_server.cpp.obj
-
-test/md_echo_server.i: test/md_echo_server.cpp.i
-
-.PHONY : test/md_echo_server.i
+.PHONY : test/gtest_EventLoopClass.i
 
 # target to preprocess a source file
-test/md_echo_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/test/md_echo_server.cpp.i
-.PHONY : test/md_echo_server.cpp.i
+test/gtest_EventLoopClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/test/gtest_EventLoopClass.cpp.i
+.PHONY : test/gtest_EventLoopClass.cpp.i
 
-test/md_echo_server.s: test/md_echo_server.cpp.s
+test/gtest_EventLoopClass.s: test/gtest_EventLoopClass.cpp.s
 
-.PHONY : test/md_echo_server.s
-
-# target to generate assembly for a file
-test/md_echo_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\md_echo_server.dir\build.make CMakeFiles/md_echo_server.dir/test/md_echo_server.cpp.s
-.PHONY : test/md_echo_server.cpp.s
-
-test/unp_echo_client.obj: test/unp_echo_client.cpp.obj
-
-.PHONY : test/unp_echo_client.obj
-
-# target to build an object file
-test/unp_echo_client.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_client.dir\build.make CMakeFiles/unp_echo_client.dir/test/unp_echo_client.cpp.obj
-.PHONY : test/unp_echo_client.cpp.obj
-
-test/unp_echo_client.i: test/unp_echo_client.cpp.i
-
-.PHONY : test/unp_echo_client.i
-
-# target to preprocess a source file
-test/unp_echo_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_client.dir\build.make CMakeFiles/unp_echo_client.dir/test/unp_echo_client.cpp.i
-.PHONY : test/unp_echo_client.cpp.i
-
-test/unp_echo_client.s: test/unp_echo_client.cpp.s
-
-.PHONY : test/unp_echo_client.s
+.PHONY : test/gtest_EventLoopClass.s
 
 # target to generate assembly for a file
-test/unp_echo_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_client.dir\build.make CMakeFiles/unp_echo_client.dir/test/unp_echo_client.cpp.s
-.PHONY : test/unp_echo_client.cpp.s
-
-test/unp_echo_server.obj: test/unp_echo_server.cpp.obj
-
-.PHONY : test/unp_echo_server.obj
-
-# target to build an object file
-test/unp_echo_server.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_server.dir\build.make CMakeFiles/unp_echo_server.dir/test/unp_echo_server.cpp.obj
-.PHONY : test/unp_echo_server.cpp.obj
-
-test/unp_echo_server.i: test/unp_echo_server.cpp.i
-
-.PHONY : test/unp_echo_server.i
-
-# target to preprocess a source file
-test/unp_echo_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_server.dir\build.make CMakeFiles/unp_echo_server.dir/test/unp_echo_server.cpp.i
-.PHONY : test/unp_echo_server.cpp.i
-
-test/unp_echo_server.s: test/unp_echo_server.cpp.s
-
-.PHONY : test/unp_echo_server.s
-
-# target to generate assembly for a file
-test/unp_echo_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\unp_echo_server.dir\build.make CMakeFiles/unp_echo_server.dir/test/unp_echo_server.cpp.s
-.PHONY : test/unp_echo_server.cpp.s
+test/gtest_EventLoopClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gtest_EventLoopClass.dir\build.make CMakeFiles/gtest_EventLoopClass.dir/test/gtest_EventLoopClass.cpp.s
+.PHONY : test/gtest_EventLoopClass.cpp.s
 
 # Help Target
 help:
@@ -336,26 +203,13 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main
-	@echo ... md_echo_client
-	@echo ... md_echo_server
-	@echo ... unp_echo_client
-	@echo ... unp_echo_server
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... test/md_echo_client.obj
-	@echo ... test/md_echo_client.i
-	@echo ... test/md_echo_client.s
-	@echo ... test/md_echo_server.obj
-	@echo ... test/md_echo_server.i
-	@echo ... test/md_echo_server.s
-	@echo ... test/unp_echo_client.obj
-	@echo ... test/unp_echo_client.i
-	@echo ... test/unp_echo_client.s
-	@echo ... test/unp_echo_server.obj
-	@echo ... test/unp_echo_server.i
-	@echo ... test/unp_echo_server.s
+	@echo ... gtest_EventLoopClass
+	@echo ... NetL/EventLoop.obj
+	@echo ... NetL/EventLoop.i
+	@echo ... NetL/EventLoop.s
+	@echo ... test/gtest_EventLoopClass.obj
+	@echo ... test/gtest_EventLoopClass.i
+	@echo ... test/gtest_EventLoopClass.s
 .PHONY : help
 
 
