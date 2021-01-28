@@ -17,7 +17,6 @@ public:
    // type
    using ChannelList = std::vector<Channel*>;
 
-   Poller(EventLoop* loop);
 
    // It polls the I/O events. Must be called in the loop
    // thread.
@@ -27,17 +26,12 @@ public:
    virtual unsigned int poll(int timeoutMs, ChannelList* activeChannels) = 0;
 
    // Register and update the channel for interested I/O events.
-   virtual void updateChannel(const Channel& ch) = 0;
+   virtual void updateChannel(Channel* ch) = 0;
 
    // Remove the channel when it destructs.
-   virtual void removeChannel(const Channel& ch) = 0;
+   virtual void removeChannel(Channel* ch) = 0;
 
    void assertInLoopThread();
-public:
-   ~Poller(){};
-
-private:
-   EventLoop* m_ownerLoop;
 };
 
 #endif

@@ -2,7 +2,7 @@
 #define NETL_NET_EVENTLOOP_H
 
 #include "Channel.h"
-#include "Poller.h"
+#include "PollPoller.h"
 
 #include <boost/noncopyable.hpp>
 #include <thread>
@@ -21,10 +21,11 @@ public:
    inline bool isInLoopThread() const { return m_threadId == std::this_thread::get_id();}
    EventLoop* getEventLoopOfCurrentThread();
    void assertInLoopThread(); 
+   void quit();
 
    bool isLooping() { return m_isLooping; }
 
-   void updateChannel(const Channel& ch);
+   void updateChannel(Channel* ch);
 
    public:
    ~EventLoop();
@@ -37,10 +38,12 @@ private:
    const std::thread::id m_threadId;
    bool m_isLooping;
 
-   using ChannelList = std::vector<Channel>;
+   using ChannelList = std::vector<Channel*>;
    ChannelList m_activeChannelList;
 
-   std::unique_ptr<Poller> m_poller;
+   PollPoller* m_poller;
+
+   bool m_quit;
 };
 
 

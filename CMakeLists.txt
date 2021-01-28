@@ -54,15 +54,23 @@ add_executable(mtest_EventLoopClass_02
 	 NetL/Channel.cpp
 	 test/mtest_EventLoopClass_02.cpp
 )
-]]
 
-add_executable(mtest_EventLoopClass_03
-	 NetL/PollPoller.cpp
+
+add_executable(mtest_EventLoop+PollPoller+Channel
 	 NetL/EventLoop.cpp
-	 test/mtest_EventLoopClass_03.cpp
+	 NetL/PollPoller.cpp
+	 NetL/Channel.cpp
+	 test/mtest_EventLoop+PollPoller+Channel.cpp
 )
 
+]]
 
+add_executable(mtest_EventLoop+PollPoller+Channel_01
+	 NetL/EventLoop.cpp
+	 NetL/PollPoller.cpp
+	 NetL/Channel.cpp
+	 test/mtest_EventLoop+PollPoller+Channel_01.cpp
+)
 
 
 

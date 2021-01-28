@@ -1,14 +1,12 @@
 #include "Channel.h"
 #include "EventLoop.h"
 
+#include <iostream>
 
-const int kWriteEvent = POLLIN | POLLPRI;
-const int kNoneEvent = 0;
-const int kReadEvent = POLLOUT;
-
+using namespace std;
 
 Channel::Channel(EventLoop *loop, int fd)
-   : m_loopÅ(loop),
+   : m_loop(loop),
      m_fd(fd),
      m_events(0),
      m_revents(0),
@@ -18,7 +16,7 @@ Channel::Channel(EventLoop *loop, int fd)
 
 void Channel::handleEvent()
 {
-   if(m_revent & POLLNVAL)
+   if(m_revents & POLLNVAL)
    {
       cout << "POLLNVAL event hanpens!" << endl;
    }
@@ -30,7 +28,7 @@ void Channel::handleEvent()
    }
 
    // Handle POLLIN, POLLPRI and POLLRDHUP events
-   if(m_revents & (POLLIN | POLLPRI | POLLRDHUP))
+   if(m_revents & (POLLIN | POLLPRI /*| POLLRDHUP*/))
    {
       if(m_readCallback) m_readCallback();
    }
@@ -42,7 +40,7 @@ void Channel::handleEvent()
    }
 }
 
-void update(void)
+void Channel::update(void)
 {
    m_loop->updateChannel(this);
 }

@@ -52,7 +52,7 @@
             MenuCaption="&amp;Build"
             CaptureOutputWith="ProcessBuffer"
             Deletable="0"
-            SaveOption="SaveWorkspaceFiles"
+            SaveOption="SaveAll"
             RunFromDir="%rw">
             <Exec CmdLine="make"/>
          </Target>
@@ -74,7 +74,7 @@
             Deletable="0"
             SaveOption="SaveNone"
             RunFromDir="%rw">
-            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe "%o"'/>
+            <Exec CmdLine='"%(VSLICKBIN1)vsdebugio" -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\mtest_EventLoopClass_03.exe'/>
          </Target>
          <Target
             Name="Execute"
@@ -85,7 +85,7 @@
             Deletable="0"
             SaveOption="SaveWorkspaceFiles"
             RunFromDir="%rw">
-            <Exec CmdLine='"%o"'/>
+            <Exec CmdLine="C:\cygwin64\home\traceur\projects\NetL\bin\mtest_EventLoopClass_03.exe"/>
          </Target>
          <Target
             Name="dash"
@@ -217,7 +217,7 @@
             MenuCaption="&amp;Build"
             CaptureOutputWith="ProcessBuffer"
             Deletable="0"
-            SaveOption="SaveWorkspaceFiles"
+            SaveOption="SaveAll"
             RunFromDir="%rw">
             <Exec CmdLine="make"/>
          </Target>
@@ -239,7 +239,7 @@
             Deletable="0"
             SaveOption="SaveNone"
             RunFromDir="%rw">
-            <Exec CmdLine='%(VSLICKBIN1)vsdebugio -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\unp_echo_server.exe "%o"'/>
+            <Exec CmdLine='"%(VSLICKBIN1)vsdebugio" -port 8001 -prog C:\cygwin64\home\traceur\projects\NetL\bin\mtest_EventLoopClass_03.exe'/>
          </Target>
          <Target
             Name="Execute"
@@ -250,7 +250,7 @@
             Deletable="0"
             SaveOption="SaveWorkspaceFiles"
             RunFromDir="%rw">
-            <Exec CmdLine='"%o"'/>
+            <Exec CmdLine="C:\cygwin64\home\traceur\projects\NetL\bin\mtest_EventLoopClass_03.exe"/>
          </Target>
          <Target
             Name="dash"
@@ -359,8 +359,6 @@
          Filters=""
          GUID="{1BBAFC13-5983-44A2-9456-306DD0FC199E}"></Folder>
    </CustomFolders>
-   <List Name="RTE">
-   </List>
    <Files AutoFolders="DirectoryView">
       <Folder Name="Base">
          <F N="Base/Types.h"/>
@@ -428,4 +426,6 @@
       <F N="CMakeLists.txt"/>
       <F N="main.cpp"/>
    </Files>
+   <List Name="RTE">
+   </List>
 </Project>

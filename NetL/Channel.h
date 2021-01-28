@@ -1,6 +1,8 @@
 #ifndef NETL_NET_CHANNEL_H
 #define NETL_NET_CHANNEL_H
 
+#include <poll.h>
+
 #include <boost/noncopyable.hpp>
 #include <boost/function.hpp>
 
@@ -35,6 +37,10 @@ public:
    int index() { return m_indexInPollfdArray; }
    void setIndex(int index) { m_indexInPollfdArray = index; }
 
+   // The core function of this class.
+   // HandleEvent is used for handling the received events from "poll" operation.
+   void handleEvent(); 
+
    // trigger the event handler
    void enableReading() { m_events |= kReadEvent; update(); }
    void disableReading() { m_events &= ~kReadEvent; update(); }
@@ -49,10 +55,6 @@ public:
    ~Channel(){}
 
 private:
-   // The core function of this class. 
-   // HandleEvent is used for handling the received events from "poll" operation.
-   void handleEvent(); 
-
    // Update the concern events for the Channel.
    void update(void);
 
@@ -90,9 +92,9 @@ private:
 
    // There is no including POSIX header, so some const value should be
    // defined here.
-   static const int kWriteEvent; 
-   static const int kNoneEvent;
-   static const int kReadEvent;
+   const int kWriteEvent = POLLOUT;
+   const int kNoneEvent = 0;
+   const int kReadEvent = POLLIN | POLLPRI;
 
    // Specify where(index) is this channel in the pollfd array which is
    // the parameter of "poll" function.
