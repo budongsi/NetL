@@ -362,6 +362,9 @@
    <List Name="RTE">
    </List>
    <Files AutoFolders="DirectoryView">
+      <Folder Name="Base">
+         <F N="Base/Types.h"/>
+      </Folder>
       <Folder Name="CMakeFiles">
          <Folder Name="3.19.3">
             <Folder Name="CompilerIdC">
@@ -383,6 +386,15 @@
          <Folder Name="md_echo_server.dir">
             <F N="CMakeFiles/md_echo_server.dir/link.txt"/>
          </Folder>
+         <Folder Name="mtest_EventLoopClass_01.dir">
+            <F N="CMakeFiles/mtest_EventLoopClass_01.dir/link.txt"/>
+         </Folder>
+         <Folder Name="mtest_EventLoopClass_02.dir">
+            <F N="CMakeFiles/mtest_EventLoopClass_02.dir/link.txt"/>
+         </Folder>
+         <Folder Name="mtest_EventLoopClass_03.dir">
+            <F N="CMakeFiles/mtest_EventLoopClass_03.dir/link.txt"/>
+         </Folder>
          <Folder Name="test00.dir">
             <F N="CMakeFiles/test00.dir/link.txt"/>
          </Folder>
@@ -395,13 +407,20 @@
          <F N="CMakeFiles/TargetDirectories.txt"/>
       </Folder>
       <Folder Name="NetL">
+         <F N="NetL/Channel.cpp"/>
+         <F N="NetL/Channel.h"/>
          <F N="NetL/EventLoop.cpp"/>
          <F N="NetL/EventLoop.h"/>
+         <F N="NetL/Poller.cpp"/>
+         <F N="NetL/Poller.h"/>
       </Folder>
       <Folder Name="test">
          <F N="test/gtest_EventLoopClass.cpp"/>
          <F N="test/md_echo_client.cpp"/>
          <F N="test/md_echo_server.cpp"/>
+         <F N="test/mtest_EventLoopClass_01.cpp"/>
+         <F N="test/mtest_EventLoopClass_02.cpp"/>
+         <F N="test/mtest_EventLoopClass_03.cpp"/>
          <F N="test/unp_echo_client.cpp"/>
          <F N="test/unp_echo_server.cpp"/>
       </Folder>

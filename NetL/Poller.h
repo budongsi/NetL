@@ -3,7 +3,7 @@
 
 #include <boost/noncopyable.hpp>
 
-class Poller
+class Poller : boost::noncopyable
 {
 public:
    Poller();

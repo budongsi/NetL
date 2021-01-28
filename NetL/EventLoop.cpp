@@ -71,4 +71,8 @@ void EventLoop::loop()
    m_isLooping = false;
 }
 
+void EventLoop::updateChannel(const Channel& ch)
+{
+   //m_poller.updateChannel(ch);
+}
 

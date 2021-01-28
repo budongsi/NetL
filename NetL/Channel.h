@@ -32,9 +32,28 @@ public:
 
    EventLoop* ownerLoop() { return m_loop; }
 
+   int index() { return m_indexInPollfdArray; }
+   void setIndex(int index) { m_indexInPollfdArray = index; }
+
+   // trigger the event handler
+   void enableReading() { m_events |= kReadEvent; update(); }
+   void disableReading() { m_events &= ~kReadEvent; update(); }
+   void enableWriting() { m_events |= kWriteEvent; update(); }
+   void disableWriting() { m_events &= ~kWriteEvent; update(); }
+   void disableALL() { m_events = kNoneEvent; update(); }
+
+   // status check
+   bool isWriting() const { return m_events & kWriteEvent; }
+
+public:
    ~Channel(){}
 
 private:
+   // The core function of this class. 
+   // HandleEvent is used for handling the received events from "poll" operation.
+   void handleEvent(); 
+
+   // Update the concern events for the Channel.
    void update(void);
 
 private:
@@ -74,6 +93,10 @@ private:
    static const int kWriteEvent; 
    static const int kNoneEvent;
    static const int kReadEvent;
+
+   // Specify where(index) is this channel in the pollfd array which is
+   // the parameter of "poll" function.
+   int m_indexInPollfdArray; // -1: it's a new channel for pollfd array
 };
 
 #endif

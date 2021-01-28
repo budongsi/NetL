@@ -23,6 +23,8 @@ public:
 
    bool isLooping() { return m_isLooping; }
 
+   void updateChannel(const Channel& ch);
+
    public:
    ~EventLoop();
 
