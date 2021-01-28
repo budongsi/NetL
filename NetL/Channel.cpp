@@ -1,11 +1,8 @@
-#include "NetL/Channel.h"
+#include "Channel.h"
+#include "EventLoop.h"
 
-Channel::Channel()
+Channel::Channel(EventLoop *loop, int fd)
 {
 
 }
 
-Channel::~Channel()
-{
-
-}

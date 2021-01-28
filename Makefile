@@ -141,33 +141,6 @@ mtest_EventLoopClass_03/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/build
 .PHONY : mtest_EventLoopClass_03/fast
 
-NetL/Channel.obj: NetL/Channel.cpp.obj
-
-.PHONY : NetL/Channel.obj
-
-# target to build an object file
-NetL/Channel.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Channel.cpp.obj
-.PHONY : NetL/Channel.cpp.obj
-
-NetL/Channel.i: NetL/Channel.cpp.i
-
-.PHONY : NetL/Channel.i
-
-# target to preprocess a source file
-NetL/Channel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Channel.cpp.i
-.PHONY : NetL/Channel.cpp.i
-
-NetL/Channel.s: NetL/Channel.cpp.s
-
-.PHONY : NetL/Channel.s
-
-# target to generate assembly for a file
-NetL/Channel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Channel.cpp.s
-.PHONY : NetL/Channel.cpp.s
-
 NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
 
 .PHONY : NetL/EventLoop.obj
@@ -258,9 +231,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... mtest_EventLoopClass_03
-	@echo ... NetL/Channel.obj
-	@echo ... NetL/Channel.i
-	@echo ... NetL/Channel.s
 	@echo ... NetL/EventLoop.obj
 	@echo ... NetL/EventLoop.i
 	@echo ... NetL/EventLoop.s

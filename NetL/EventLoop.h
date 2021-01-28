@@ -1,17 +1,13 @@
 #ifndef NETL_NET_EVENTLOOP_H
 #define NETL_NET_EVENTLOOP_H
 
+#include "Channel.h"
+#include "Poller.h"
+
 #include <boost/noncopyable.hpp>
 #include <thread>
 #include <memory>
 #include <vector>
-#include "Channel.h"
-#include "Poller.h"
-
-namespace NetL
-{
-namespace Net
-{
 
 // EventLoop for the Loop and dispatching a Event to its Event Handler
 class EventLoop : boost::noncopyable
@@ -45,7 +41,5 @@ private:
    std::unique_ptr<Poller> m_poller;
 };
 
-}
-}
 
 #endif

@@ -2,14 +2,78 @@
 #define NETL_NET_CHANNEL_H
 
 #include <boost/noncopyable.hpp>
+#include <boost/function.hpp>
 
+class EventLoop;
+
+// This class is assosiated with one file descriptor(fd)
+// which could be a sockfd, an eventfd, a timerfd, or a
+// signalfd.
 class Channel
 {
 public:
-   Channel();
+   // Define a type which is the "void()" prototype
+   using EventCallback = boost::function<void()>; 
 
-public:
-   ~Channel();
+   // A Channel belongs to its own EventLoop, that means
+   // a Channel can only be handled in one EventLoop
+   // thread. but One EventLoop can handle multiple Channels
+   Channel(EventLoop *loop, int fd);
+
+   inline void setWriteCallback(const EventCallback& cb) { m_writeCallback = cb; }
+   inline void setReadCallback(const EventCallback &cb) { m_readCallback = cb; }
+   inline void setErrorCallback(const EventCallback &cb) { m_errorCallback = cb; }
+
+   // pollfd
+   int fd() const { return m_fd; }
+   int events() const { return m_events; }
+   void set_revents(int revt) { m_revents = revt;}
+   bool isNoneEvent() const { return m_events == kNoneEvent; }
+
+   EventLoop* ownerLoop() { return m_loop; }
+
+   ~Channel(){}
+
+private:
+   void update(void);
+
+private:
+   // The callback handler of events:
+   // -------------------------------
+   // POLLIN
+   // POLLRDNORM
+   // POLLRDBAND
+   // POLLPRI
+   // POLLOUT
+   // POLLWRNORM
+   // POLLWRBAND
+   // POLLERR
+   // POLLHUP
+   // POLLNVAL
+   // -------------------------------
+   EventCallback m_writeCallback;
+   EventCallback m_readCallback; 
+   EventCallback m_errorCallback;
+
+   // Associated EventLoop
+   EventLoop* m_loop;
+
+   // int poll(struct pollfd *fdarray, unsigned long nfds, inttimeout)
+   // 
+   // struct pollfd {
+   //    int   fd;      /* descriptor to check */
+   //    short events;  /* events of interest on fd */
+   //    short revents  /* events that occurred on fd */
+   // }
+   const int m_fd;
+   int m_events;
+   int m_revents;
+
+   // There is no including POSIX header, so some const value should be
+   // defined here.
+   static const int kWriteEvent; 
+   static const int kNoneEvent;
+   static const int kReadEvent;
 };
 
 #endif
