@@ -20,6 +20,7 @@ public:
    
    inline bool isInLoopThread() const { return m_threadId == std::this_thread::get_id();}
    EventLoop* getEventLoopOfCurrentThread();
+   void assertInLoopThread(); 
 
    bool isLooping() { return m_isLooping; }
 
@@ -30,7 +31,6 @@ public:
 
 private:
    void abortNotInLoopThread() const;
-   void assertInLoopThread() const;
 
 // Data
 private:

@@ -50,7 +50,7 @@ void EventLoop::abortNotInLoopThread() const
 }
 
 
-void EventLoop::assertInLoopThread() const
+void EventLoop::assertInLoopThread()
 {
    if(isInLoopThread() == false) // not in looping
    {
@@ -73,6 +73,6 @@ void EventLoop::loop()
 
 void EventLoop::updateChannel(const Channel& ch)
 {
-   //m_poller.updateChannel(ch);
+   m_poller->updateChannel(ch);
 }
 

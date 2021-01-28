@@ -1,11 +1,14 @@
 #include "Poller.h"
 
-Poller::Poller()
+Poller::Poller(EventLoop *loop)
+    : m_ownerLoop(loop)
 {
 
 }
 
-Poller::~Poller()
+void Poller::assertInLoopThread()
 {
-
+   m_ownerLoop->assertInLoopThread();
 }
+
+

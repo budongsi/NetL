@@ -168,32 +168,32 @@ NetL/EventLoop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/EventLoop.cpp.s
 .PHONY : NetL/EventLoop.cpp.s
 
-NetL/Poller.obj: NetL/Poller.cpp.obj
+NetL/PollPoller.obj: NetL/PollPoller.cpp.obj
 
-.PHONY : NetL/Poller.obj
+.PHONY : NetL/PollPoller.obj
 
 # target to build an object file
-NetL/Poller.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Poller.cpp.obj
-.PHONY : NetL/Poller.cpp.obj
+NetL/PollPoller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/PollPoller.cpp.obj
+.PHONY : NetL/PollPoller.cpp.obj
 
-NetL/Poller.i: NetL/Poller.cpp.i
+NetL/PollPoller.i: NetL/PollPoller.cpp.i
 
-.PHONY : NetL/Poller.i
+.PHONY : NetL/PollPoller.i
 
 # target to preprocess a source file
-NetL/Poller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Poller.cpp.i
-.PHONY : NetL/Poller.cpp.i
+NetL/PollPoller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/PollPoller.cpp.i
+.PHONY : NetL/PollPoller.cpp.i
 
-NetL/Poller.s: NetL/Poller.cpp.s
+NetL/PollPoller.s: NetL/PollPoller.cpp.s
 
-.PHONY : NetL/Poller.s
+.PHONY : NetL/PollPoller.s
 
 # target to generate assembly for a file
-NetL/Poller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/Poller.cpp.s
-.PHONY : NetL/Poller.cpp.s
+NetL/PollPoller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopClass_03.dir\build.make CMakeFiles/mtest_EventLoopClass_03.dir/NetL/PollPoller.cpp.s
+.PHONY : NetL/PollPoller.cpp.s
 
 test/mtest_EventLoopClass_03.obj: test/mtest_EventLoopClass_03.cpp.obj
 
@@ -234,9 +234,9 @@ help:
 	@echo ... NetL/EventLoop.obj
 	@echo ... NetL/EventLoop.i
 	@echo ... NetL/EventLoop.s
-	@echo ... NetL/Poller.obj
-	@echo ... NetL/Poller.i
-	@echo ... NetL/Poller.s
+	@echo ... NetL/PollPoller.obj
+	@echo ... NetL/PollPoller.i
+	@echo ... NetL/PollPoller.s
 	@echo ... test/mtest_EventLoopClass_03.obj
 	@echo ... test/mtest_EventLoopClass_03.i
 	@echo ... test/mtest_EventLoopClass_03.s
