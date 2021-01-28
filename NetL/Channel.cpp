@@ -24,18 +24,21 @@ void Channel::handleEvent()
    // Handle POLLERR and POLLNVAL events
    if(m_revents & (POLLERR | POLLNVAL))
    {
+      cout << "in errorCallback" << endl;
       if(m_errorCallback) m_errorCallback();
    }
 
    // Handle POLLIN, POLLPRI and POLLRDHUP events
    if(m_revents & (POLLIN | POLLPRI /*| POLLRDHUP*/))
    {
+      cout << "in readCallback" << endl; 
       if(m_readCallback) m_readCallback();
    }
 
    // Handle POLLOUT events
    if(m_revents & POLLOUT)
    {
+      cout << "in writeCallback" << endl; 
       if(m_writeCallback) m_writeCallback();
    }
 }
