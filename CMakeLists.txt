@@ -63,7 +63,6 @@ add_executable(mtest_EventLoop+PollPoller+Channel
 	 test/mtest_EventLoop+PollPoller+Channel.cpp
 )
 
-]]
 
 add_executable(mtest_main
 	 NetL/PollPoller.cpp
@@ -75,5 +74,16 @@ add_executable(mtest_main
 	 main.cpp
 )
 
+]]
 
+add_executable(mtest_EventLoopThreadClass_03
+	 NetL/PollPoller.cpp
+	 NetL/Channel.cpp
+	 NetL/EventLoop.cpp
+	 Base/Timestamp.cpp
+	 NetL/Timer.cpp
+	 NetL/TimerQueue.cpp
+	 NetL/EventLoopThread.cpp
+	 test/mtest_EventLoopThreadClass_03.cpp
+)
 

@@ -10,7 +10,6 @@
 
 // System Library
 #include <sys/poll.h>
-#include <sys/eventfd.h>
 
 using namespace std;
 
@@ -187,12 +186,15 @@ void EventLoop::wakeup()
 
 int EventLoop::createEventfd()
 {
+#if 0
   int evtfd = ::eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
   if (evtfd < 0)
   {
     abort();
   }
   return evtfd;
+#endif
+  return 0;
 }
 
 void EventLoop::handleRead4Wakeup()
