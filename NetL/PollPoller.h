@@ -21,6 +21,8 @@ public:
     // Remove the channel when it destructs.
    virtual void removeChannel(Channel* ch) override;
 
+   virtual void assertInLoopThread() override; 
+
 private:
    void fillActiveChannels(int numEvents, ChannelList* activeChannels);
 

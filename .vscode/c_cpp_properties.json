@@ -1,0 +1,42 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/traceur/AppData/Roaming/Code/User/globalStorage/wangtao0101.debug-leetcode",
+                "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++",
+                "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin",
+                "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward",
+                "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include",
+                "C:/cygwin64/usr/include",
+                "C:/cygwin64/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"
+               
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "C:/Users/traceur/AppData/Roaming/Code/User/globalStorage/wangtao0101.debug-leetcode",
+                    "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++",
+                    "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin",
+                    "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward",
+                    "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/10/include",
+                    "C:/cygwin64/usr/include",
+                    "C:/cygwin64/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "compilerPath": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -31,7 +31,7 @@ public:
    // Remove the channel when it destructs.
    virtual void removeChannel(Channel* ch) = 0;
 
-   void assertInLoopThread();
+   virtual void assertInLoopThread() = 0;
 };
 
 #endif

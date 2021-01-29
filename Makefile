@@ -129,233 +129,148 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mtest_EventLoopThreadClass_03
+# Target rules for targets named main
 
 # Build rule for target.
-mtest_EventLoopThreadClass_03: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mtest_EventLoopThreadClass_03
-.PHONY : mtest_EventLoopThreadClass_03
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-mtest_EventLoopThreadClass_03/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/build
-.PHONY : mtest_EventLoopThreadClass_03/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
-Base/Timestamp.obj: Base/Timestamp.cpp.obj
+#=============================================================================
+# Target rules for targets named NetLnet
 
-.PHONY : Base/Timestamp.obj
+# Build rule for target.
+NetLnet: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NetLnet
+.PHONY : NetLnet
 
-# target to build an object file
-Base/Timestamp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/Base/Timestamp.cpp.obj
-.PHONY : Base/Timestamp.cpp.obj
+# fast build rule for target.
+NetLnet/fast:
+	$(MAKE) $(MAKESILENT) -f NetL\CMakeFiles\NetLnet.dir\build.make NetL/CMakeFiles/NetLnet.dir/build
+.PHONY : NetLnet/fast
 
-Base/Timestamp.i: Base/Timestamp.cpp.i
+#=============================================================================
+# Target rules for targets named NetLbase
 
-.PHONY : Base/Timestamp.i
+# Build rule for target.
+NetLbase: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NetLbase
+.PHONY : NetLbase
 
-# target to preprocess a source file
-Base/Timestamp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/Base/Timestamp.cpp.i
-.PHONY : Base/Timestamp.cpp.i
+# fast build rule for target.
+NetLbase/fast:
+	$(MAKE) $(MAKESILENT) -f Base\CMakeFiles\NetLbase.dir\build.make Base/CMakeFiles/NetLbase.dir/build
+.PHONY : NetLbase/fast
 
-Base/Timestamp.s: Base/Timestamp.cpp.s
+#=============================================================================
+# Target rules for targets named ut_EventLoopClass
 
-.PHONY : Base/Timestamp.s
+# Build rule for target.
+ut_EventLoopClass: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ut_EventLoopClass
+.PHONY : ut_EventLoopClass
 
-# target to generate assembly for a file
-Base/Timestamp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/Base/Timestamp.cpp.s
-.PHONY : Base/Timestamp.cpp.s
+# fast build rule for target.
+ut_EventLoopClass/fast:
+	$(MAKE) $(MAKESILENT) -f test\UnitTest\CMakeFiles\ut_EventLoopClass.dir\build.make test/UnitTest/CMakeFiles/ut_EventLoopClass.dir/build
+.PHONY : ut_EventLoopClass/fast
 
-NetL/Channel.obj: NetL/Channel.cpp.obj
+#=============================================================================
+# Target rules for targets named mt_EventLoopClass_01
 
-.PHONY : NetL/Channel.obj
+# Build rule for target.
+mt_EventLoopClass_01: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mt_EventLoopClass_01
+.PHONY : mt_EventLoopClass_01
 
-# target to build an object file
-NetL/Channel.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/Channel.cpp.obj
-.PHONY : NetL/Channel.cpp.obj
+# fast build rule for target.
+mt_EventLoopClass_01/fast:
+	$(MAKE) $(MAKESILENT) -f test\ManualTest\CMakeFiles\mt_EventLoopClass_01.dir\build.make test/ManualTest/CMakeFiles/mt_EventLoopClass_01.dir/build
+.PHONY : mt_EventLoopClass_01/fast
 
-NetL/Channel.i: NetL/Channel.cpp.i
+#=============================================================================
+# Target rules for targets named mt_EventLoopClass_02
 
-.PHONY : NetL/Channel.i
+# Build rule for target.
+mt_EventLoopClass_02: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mt_EventLoopClass_02
+.PHONY : mt_EventLoopClass_02
 
-# target to preprocess a source file
-NetL/Channel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/Channel.cpp.i
-.PHONY : NetL/Channel.cpp.i
+# fast build rule for target.
+mt_EventLoopClass_02/fast:
+	$(MAKE) $(MAKESILENT) -f test\ManualTest\CMakeFiles\mt_EventLoopClass_02.dir\build.make test/ManualTest/CMakeFiles/mt_EventLoopClass_02.dir/build
+.PHONY : mt_EventLoopClass_02/fast
 
-NetL/Channel.s: NetL/Channel.cpp.s
+#=============================================================================
+# Target rules for targets named mt_EventLoop+PollPoller+Channel_01
 
-.PHONY : NetL/Channel.s
+# Build rule for target.
+mt_EventLoop+PollPoller+Channel_01: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mt_EventLoop+PollPoller+Channel_01
+.PHONY : mt_EventLoop+PollPoller+Channel_01
 
-# target to generate assembly for a file
-NetL/Channel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/Channel.cpp.s
-.PHONY : NetL/Channel.cpp.s
+# fast build rule for target.
+mt_EventLoop+PollPoller+Channel_01/fast:
+	$(MAKE) $(MAKESILENT) -f test\ManualTest\CMakeFiles\mt_EventLoop+PollPoller+Channel_01.dir\build.make test/ManualTest/CMakeFiles/mt_EventLoop+PollPoller+Channel_01.dir/build
+.PHONY : mt_EventLoop+PollPoller+Channel_01/fast
 
-NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
+#=============================================================================
+# Target rules for targets named mt_EventLoopClass_03
 
-.PHONY : NetL/EventLoop.obj
+# Build rule for target.
+mt_EventLoopClass_03: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mt_EventLoopClass_03
+.PHONY : mt_EventLoopClass_03
 
-# target to build an object file
-NetL/EventLoop.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/EventLoop.cpp.obj
-.PHONY : NetL/EventLoop.cpp.obj
+# fast build rule for target.
+mt_EventLoopClass_03/fast:
+	$(MAKE) $(MAKESILENT) -f test\ManualTest\CMakeFiles\mt_EventLoopClass_03.dir\build.make test/ManualTest/CMakeFiles/mt_EventLoopClass_03.dir/build
+.PHONY : mt_EventLoopClass_03/fast
 
-NetL/EventLoop.i: NetL/EventLoop.cpp.i
+#=============================================================================
+# Target rules for targets named mt_EventLoop+PollPoller+Channel
 
-.PHONY : NetL/EventLoop.i
+# Build rule for target.
+mt_EventLoop+PollPoller+Channel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mt_EventLoop+PollPoller+Channel
+.PHONY : mt_EventLoop+PollPoller+Channel
 
-# target to preprocess a source file
-NetL/EventLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/EventLoop.cpp.i
-.PHONY : NetL/EventLoop.cpp.i
+# fast build rule for target.
+mt_EventLoop+PollPoller+Channel/fast:
+	$(MAKE) $(MAKESILENT) -f test\ManualTest\CMakeFiles\mt_EventLoop+PollPoller+Channel.dir\build.make test/ManualTest/CMakeFiles/mt_EventLoop+PollPoller+Channel.dir/build
+.PHONY : mt_EventLoop+PollPoller+Channel/fast
 
-NetL/EventLoop.s: NetL/EventLoop.cpp.s
+main.obj: main.cpp.obj
 
-.PHONY : NetL/EventLoop.s
-
-# target to generate assembly for a file
-NetL/EventLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/EventLoop.cpp.s
-.PHONY : NetL/EventLoop.cpp.s
-
-NetL/EventLoopThread.obj: NetL/EventLoopThread.cpp.obj
-
-.PHONY : NetL/EventLoopThread.obj
-
-# target to build an object file
-NetL/EventLoopThread.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/EventLoopThread.cpp.obj
-.PHONY : NetL/EventLoopThread.cpp.obj
-
-NetL/EventLoopThread.i: NetL/EventLoopThread.cpp.i
-
-.PHONY : NetL/EventLoopThread.i
-
-# target to preprocess a source file
-NetL/EventLoopThread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/EventLoopThread.cpp.i
-.PHONY : NetL/EventLoopThread.cpp.i
-
-NetL/EventLoopThread.s: NetL/EventLoopThread.cpp.s
-
-.PHONY : NetL/EventLoopThread.s
-
-# target to generate assembly for a file
-NetL/EventLoopThread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/EventLoopThread.cpp.s
-.PHONY : NetL/EventLoopThread.cpp.s
-
-NetL/PollPoller.obj: NetL/PollPoller.cpp.obj
-
-.PHONY : NetL/PollPoller.obj
+.PHONY : main.obj
 
 # target to build an object file
-NetL/PollPoller.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/PollPoller.cpp.obj
-.PHONY : NetL/PollPoller.cpp.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-NetL/PollPoller.i: NetL/PollPoller.cpp.i
+main.i: main.cpp.i
 
-.PHONY : NetL/PollPoller.i
-
-# target to preprocess a source file
-NetL/PollPoller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/PollPoller.cpp.i
-.PHONY : NetL/PollPoller.cpp.i
-
-NetL/PollPoller.s: NetL/PollPoller.cpp.s
-
-.PHONY : NetL/PollPoller.s
-
-# target to generate assembly for a file
-NetL/PollPoller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/PollPoller.cpp.s
-.PHONY : NetL/PollPoller.cpp.s
-
-NetL/Timer.obj: NetL/Timer.cpp.obj
-
-.PHONY : NetL/Timer.obj
-
-# target to build an object file
-NetL/Timer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/Timer.cpp.obj
-.PHONY : NetL/Timer.cpp.obj
-
-NetL/Timer.i: NetL/Timer.cpp.i
-
-.PHONY : NetL/Timer.i
+.PHONY : main.i
 
 # target to preprocess a source file
-NetL/Timer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/Timer.cpp.i
-.PHONY : NetL/Timer.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-NetL/Timer.s: NetL/Timer.cpp.s
+main.s: main.cpp.s
 
-.PHONY : NetL/Timer.s
-
-# target to generate assembly for a file
-NetL/Timer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/Timer.cpp.s
-.PHONY : NetL/Timer.cpp.s
-
-NetL/TimerQueue.obj: NetL/TimerQueue.cpp.obj
-
-.PHONY : NetL/TimerQueue.obj
-
-# target to build an object file
-NetL/TimerQueue.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/TimerQueue.cpp.obj
-.PHONY : NetL/TimerQueue.cpp.obj
-
-NetL/TimerQueue.i: NetL/TimerQueue.cpp.i
-
-.PHONY : NetL/TimerQueue.i
-
-# target to preprocess a source file
-NetL/TimerQueue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/TimerQueue.cpp.i
-.PHONY : NetL/TimerQueue.cpp.i
-
-NetL/TimerQueue.s: NetL/TimerQueue.cpp.s
-
-.PHONY : NetL/TimerQueue.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-NetL/TimerQueue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/NetL/TimerQueue.cpp.s
-.PHONY : NetL/TimerQueue.cpp.s
-
-test/mtest_EventLoopThreadClass_03.obj: test/mtest_EventLoopThreadClass_03.cpp.obj
-
-.PHONY : test/mtest_EventLoopThreadClass_03.obj
-
-# target to build an object file
-test/mtest_EventLoopThreadClass_03.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/test/mtest_EventLoopThreadClass_03.cpp.obj
-.PHONY : test/mtest_EventLoopThreadClass_03.cpp.obj
-
-test/mtest_EventLoopThreadClass_03.i: test/mtest_EventLoopThreadClass_03.cpp.i
-
-.PHONY : test/mtest_EventLoopThreadClass_03.i
-
-# target to preprocess a source file
-test/mtest_EventLoopThreadClass_03.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/test/mtest_EventLoopThreadClass_03.cpp.i
-.PHONY : test/mtest_EventLoopThreadClass_03.cpp.i
-
-test/mtest_EventLoopThreadClass_03.s: test/mtest_EventLoopThreadClass_03.cpp.s
-
-.PHONY : test/mtest_EventLoopThreadClass_03.s
-
-# target to generate assembly for a file
-test/mtest_EventLoopThreadClass_03.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoopThreadClass_03.dir\build.make CMakeFiles/mtest_EventLoopThreadClass_03.dir/test/mtest_EventLoopThreadClass_03.cpp.s
-.PHONY : test/mtest_EventLoopThreadClass_03.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -365,31 +280,18 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... mtest_EventLoopThreadClass_03
-	@echo ... Base/Timestamp.obj
-	@echo ... Base/Timestamp.i
-	@echo ... Base/Timestamp.s
-	@echo ... NetL/Channel.obj
-	@echo ... NetL/Channel.i
-	@echo ... NetL/Channel.s
-	@echo ... NetL/EventLoop.obj
-	@echo ... NetL/EventLoop.i
-	@echo ... NetL/EventLoop.s
-	@echo ... NetL/EventLoopThread.obj
-	@echo ... NetL/EventLoopThread.i
-	@echo ... NetL/EventLoopThread.s
-	@echo ... NetL/PollPoller.obj
-	@echo ... NetL/PollPoller.i
-	@echo ... NetL/PollPoller.s
-	@echo ... NetL/Timer.obj
-	@echo ... NetL/Timer.i
-	@echo ... NetL/Timer.s
-	@echo ... NetL/TimerQueue.obj
-	@echo ... NetL/TimerQueue.i
-	@echo ... NetL/TimerQueue.s
-	@echo ... test/mtest_EventLoopThreadClass_03.obj
-	@echo ... test/mtest_EventLoopThreadClass_03.i
-	@echo ... test/mtest_EventLoopThreadClass_03.s
+	@echo ... NetLbase
+	@echo ... NetLnet
+	@echo ... main
+	@echo ... mt_EventLoop+PollPoller+Channel
+	@echo ... mt_EventLoop+PollPoller+Channel_01
+	@echo ... mt_EventLoopClass_01
+	@echo ... mt_EventLoopClass_02
+	@echo ... mt_EventLoopClass_03
+	@echo ... ut_EventLoopClass
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 

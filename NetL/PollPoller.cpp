@@ -79,3 +79,10 @@ void PollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels)
    }
 }
 
+void PollPoller::assertInLoopThread()
+{
+   m_ownerLoop->assertInLoopThread();
+}
+
+
+

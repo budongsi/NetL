@@ -1,4 +1,8 @@
-/.vscode/
-/CMakeFiles/
-cmake_install.cmake
-CMakeCache.txt
+# ingore auto-crreated files
+/**/cmake_install.cmake
+/**/CMakeCache.txt
+/**/CMakeFiles/
+/**/Makefile
+
+# need this, maybe
+#/**/*.exe
