@@ -49,9 +49,10 @@ public:
 
 private:
    void abortNotInLoopThread() const;
-   void handleRead();
+   void handleRead4Wakeup();
    void doPendingFunctors();
    void queueInLoop(const Functor& cb);
+   int createEventfd();
 
 // Data
 private:
@@ -60,7 +61,7 @@ private:
 
    using ChannelList = std::vector<Channel*>;
    ChannelList m_activeChannelList;
-   Channel *currentActiveChannel = nullptr; 
+   Channel *m_currentActiveChannel; 
 
    PollPoller* m_poller;
 
@@ -76,7 +77,7 @@ private:
    std::mutex m_mutex;
    std::vector<Functor> m_pendingFunctors; // guarded by m_mutex
 
-   bool m_eventHandling = false;
+   bool m_eventHandling;
 };
 
 

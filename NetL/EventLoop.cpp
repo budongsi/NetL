@@ -1,6 +1,7 @@
 #include "EventLoop.h"
 #include "PollPoller.h"
 #include "TimerId.h"
+#include "Channel.h"
 
 // Language Library
 #include <iostream>
@@ -9,6 +10,7 @@
 
 // System Library
 #include <sys/poll.h>
+#include <sys/eventfd.h>
 
 using namespace std;
 
@@ -16,8 +18,10 @@ static __thread EventLoop* t_loopInThisThread = nullptr;
 
 EventLoop::EventLoop()
     : m_isLooping(false),
-      m_threadId(std::this_thread::get_id()
-    )
+      m_threadId(std::this_thread::get_id()),
+      m_eventHandling(false),
+      m_callingPendingFunctors(false),
+      m_currentActiveChannel(nullptr)
 {
    cout <<  "EventLoop(obj) created:" << this << ", in thread:" << m_threadId << endl;
 
@@ -33,6 +37,10 @@ EventLoop::EventLoop()
    }
    m_poller = new PollPoller(this);
    m_timerQueue = new TimerQueue(this);
+
+   // wake-up management intialization
+   m_wakeupFd = createEventfd();
+   m_wakeupChannel = new Channel(this, m_wakeupFd);
 }
 
 EventLoop::~EventLoop()
@@ -41,6 +49,7 @@ EventLoop::~EventLoop()
 
    if(m_poller != nullptr) delete m_poller;
    if(m_timerQueue != nullptr) delete m_timerQueue;
+   if(m_wakeupChannel != nullptr) delete m_wakeupChannel;
    t_loopInThisThread = nullptr;
 }
 
@@ -81,10 +90,10 @@ void EventLoop::loop()
       m_eventHandling = true;
       for(auto ch : m_activeChannelList)
       {
-         currentActiveChannel = ch; // set the current running channel
+         m_currentActiveChannel = ch; // set the current running channel
          ch->handleEvent();
       }
-      currentActiveChannel= nullptr;
+      m_currentActiveChannel= nullptr;
       m_eventHandling = false;
       doPendingFunctors();
    }
@@ -176,4 +185,18 @@ void EventLoop::wakeup()
 
 }
 
+int EventLoop::createEventfd()
+{
+  int evtfd = ::eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
+  if (evtfd < 0)
+  {
+    abort();
+  }
+  return evtfd;
+}
+
+void EventLoop::handleRead4Wakeup()
+{
+
+}
 
