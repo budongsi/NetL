@@ -74,17 +74,6 @@ CMAKE_BINARY_DIR = C:\cygwin64\home\traceur\projects\NetL
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -95,6 +84,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -129,17 +129,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mtest_EventLoop+PollPoller+Channel_01
+# Target rules for targets named mtest_main
 
 # Build rule for target.
-mtest_EventLoop+PollPoller+Channel_01: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mtest_EventLoop+PollPoller+Channel_01
-.PHONY : mtest_EventLoop+PollPoller+Channel_01
+mtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 mtest_main
+.PHONY : mtest_main
 
 # fast build rule for target.
-mtest_EventLoop+PollPoller+Channel_01/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/build
-.PHONY : mtest_EventLoop+PollPoller+Channel_01/fast
+mtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/build
+.PHONY : mtest_main/fast
+
+Base/Timestamp.obj: Base/Timestamp.cpp.obj
+
+.PHONY : Base/Timestamp.obj
+
+# target to build an object file
+Base/Timestamp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/Base/Timestamp.cpp.obj
+.PHONY : Base/Timestamp.cpp.obj
+
+Base/Timestamp.i: Base/Timestamp.cpp.i
+
+.PHONY : Base/Timestamp.i
+
+# target to preprocess a source file
+Base/Timestamp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/Base/Timestamp.cpp.i
+.PHONY : Base/Timestamp.cpp.i
+
+Base/Timestamp.s: Base/Timestamp.cpp.s
+
+.PHONY : Base/Timestamp.s
+
+# target to generate assembly for a file
+Base/Timestamp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/Base/Timestamp.cpp.s
+.PHONY : Base/Timestamp.cpp.s
 
 NetL/Channel.obj: NetL/Channel.cpp.obj
 
@@ -147,7 +174,7 @@ NetL/Channel.obj: NetL/Channel.cpp.obj
 
 # target to build an object file
 NetL/Channel.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/Channel.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/Channel.cpp.obj
 .PHONY : NetL/Channel.cpp.obj
 
 NetL/Channel.i: NetL/Channel.cpp.i
@@ -156,7 +183,7 @@ NetL/Channel.i: NetL/Channel.cpp.i
 
 # target to preprocess a source file
 NetL/Channel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/Channel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/Channel.cpp.i
 .PHONY : NetL/Channel.cpp.i
 
 NetL/Channel.s: NetL/Channel.cpp.s
@@ -165,7 +192,7 @@ NetL/Channel.s: NetL/Channel.cpp.s
 
 # target to generate assembly for a file
 NetL/Channel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/Channel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/Channel.cpp.s
 .PHONY : NetL/Channel.cpp.s
 
 NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
@@ -174,7 +201,7 @@ NetL/EventLoop.obj: NetL/EventLoop.cpp.obj
 
 # target to build an object file
 NetL/EventLoop.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/EventLoop.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/EventLoop.cpp.obj
 .PHONY : NetL/EventLoop.cpp.obj
 
 NetL/EventLoop.i: NetL/EventLoop.cpp.i
@@ -183,7 +210,7 @@ NetL/EventLoop.i: NetL/EventLoop.cpp.i
 
 # target to preprocess a source file
 NetL/EventLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/EventLoop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/EventLoop.cpp.i
 .PHONY : NetL/EventLoop.cpp.i
 
 NetL/EventLoop.s: NetL/EventLoop.cpp.s
@@ -192,7 +219,7 @@ NetL/EventLoop.s: NetL/EventLoop.cpp.s
 
 # target to generate assembly for a file
 NetL/EventLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/EventLoop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/EventLoop.cpp.s
 .PHONY : NetL/EventLoop.cpp.s
 
 NetL/PollPoller.obj: NetL/PollPoller.cpp.obj
@@ -201,7 +228,7 @@ NetL/PollPoller.obj: NetL/PollPoller.cpp.obj
 
 # target to build an object file
 NetL/PollPoller.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/PollPoller.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/PollPoller.cpp.obj
 .PHONY : NetL/PollPoller.cpp.obj
 
 NetL/PollPoller.i: NetL/PollPoller.cpp.i
@@ -210,7 +237,7 @@ NetL/PollPoller.i: NetL/PollPoller.cpp.i
 
 # target to preprocess a source file
 NetL/PollPoller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/PollPoller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/PollPoller.cpp.i
 .PHONY : NetL/PollPoller.cpp.i
 
 NetL/PollPoller.s: NetL/PollPoller.cpp.s
@@ -219,35 +246,89 @@ NetL/PollPoller.s: NetL/PollPoller.cpp.s
 
 # target to generate assembly for a file
 NetL/PollPoller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/NetL/PollPoller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/PollPoller.cpp.s
 .PHONY : NetL/PollPoller.cpp.s
 
-test/mtest_EventLoop+PollPoller+Channel_01.obj: test/mtest_EventLoop+PollPoller+Channel_01.cpp.obj
+NetL/Timer.obj: NetL/Timer.cpp.obj
 
-.PHONY : test/mtest_EventLoop+PollPoller+Channel_01.obj
+.PHONY : NetL/Timer.obj
 
 # target to build an object file
-test/mtest_EventLoop+PollPoller+Channel_01.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/test/mtest_EventLoop+PollPoller+Channel_01.cpp.obj
-.PHONY : test/mtest_EventLoop+PollPoller+Channel_01.cpp.obj
+NetL/Timer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/Timer.cpp.obj
+.PHONY : NetL/Timer.cpp.obj
 
-test/mtest_EventLoop+PollPoller+Channel_01.i: test/mtest_EventLoop+PollPoller+Channel_01.cpp.i
+NetL/Timer.i: NetL/Timer.cpp.i
 
-.PHONY : test/mtest_EventLoop+PollPoller+Channel_01.i
+.PHONY : NetL/Timer.i
 
 # target to preprocess a source file
-test/mtest_EventLoop+PollPoller+Channel_01.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/test/mtest_EventLoop+PollPoller+Channel_01.cpp.i
-.PHONY : test/mtest_EventLoop+PollPoller+Channel_01.cpp.i
+NetL/Timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/Timer.cpp.i
+.PHONY : NetL/Timer.cpp.i
 
-test/mtest_EventLoop+PollPoller+Channel_01.s: test/mtest_EventLoop+PollPoller+Channel_01.cpp.s
+NetL/Timer.s: NetL/Timer.cpp.s
 
-.PHONY : test/mtest_EventLoop+PollPoller+Channel_01.s
+.PHONY : NetL/Timer.s
 
 # target to generate assembly for a file
-test/mtest_EventLoop+PollPoller+Channel_01.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_EventLoop+PollPoller+Channel_01.dir\build.make CMakeFiles/mtest_EventLoop+PollPoller+Channel_01.dir/test/mtest_EventLoop+PollPoller+Channel_01.cpp.s
-.PHONY : test/mtest_EventLoop+PollPoller+Channel_01.cpp.s
+NetL/Timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/Timer.cpp.s
+.PHONY : NetL/Timer.cpp.s
+
+NetL/TimerQueue.obj: NetL/TimerQueue.cpp.obj
+
+.PHONY : NetL/TimerQueue.obj
+
+# target to build an object file
+NetL/TimerQueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/TimerQueue.cpp.obj
+.PHONY : NetL/TimerQueue.cpp.obj
+
+NetL/TimerQueue.i: NetL/TimerQueue.cpp.i
+
+.PHONY : NetL/TimerQueue.i
+
+# target to preprocess a source file
+NetL/TimerQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/TimerQueue.cpp.i
+.PHONY : NetL/TimerQueue.cpp.i
+
+NetL/TimerQueue.s: NetL/TimerQueue.cpp.s
+
+.PHONY : NetL/TimerQueue.s
+
+# target to generate assembly for a file
+NetL/TimerQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/NetL/TimerQueue.cpp.s
+.PHONY : NetL/TimerQueue.cpp.s
+
+main.obj: main.cpp.obj
+
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mtest_main.dir\build.make CMakeFiles/mtest_main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -257,7 +338,10 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... mtest_EventLoop+PollPoller+Channel_01
+	@echo ... mtest_main
+	@echo ... Base/Timestamp.obj
+	@echo ... Base/Timestamp.i
+	@echo ... Base/Timestamp.s
 	@echo ... NetL/Channel.obj
 	@echo ... NetL/Channel.i
 	@echo ... NetL/Channel.s
@@ -267,9 +351,15 @@ help:
 	@echo ... NetL/PollPoller.obj
 	@echo ... NetL/PollPoller.i
 	@echo ... NetL/PollPoller.s
-	@echo ... test/mtest_EventLoop+PollPoller+Channel_01.obj
-	@echo ... test/mtest_EventLoop+PollPoller+Channel_01.i
-	@echo ... test/mtest_EventLoop+PollPoller+Channel_01.s
+	@echo ... NetL/Timer.obj
+	@echo ... NetL/Timer.i
+	@echo ... NetL/Timer.s
+	@echo ... NetL/TimerQueue.obj
+	@echo ... NetL/TimerQueue.i
+	@echo ... NetL/TimerQueue.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 

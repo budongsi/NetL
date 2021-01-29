@@ -1,5 +1,6 @@
 #include "EventLoop.h"
 #include "PollPoller.h"
+#include "TimerId.h"
 
 // Language Library
 #include <iostream>
@@ -31,13 +32,15 @@ EventLoop::EventLoop()
       t_loopInThisThread = this;
    }
    m_poller = new PollPoller(this);
+   m_timerQueue = new TimerQueue(this);
 }
 
 EventLoop::~EventLoop()
 {
    assert(!m_isLooping);
 
-   if(m_poller != nullptr) delete m_poller; 
+   if(m_poller != nullptr) delete m_poller;
+   if(m_timerQueue != nullptr) delete m_timerQueue;
    t_loopInThisThread = nullptr;
 }
 
@@ -74,10 +77,16 @@ void EventLoop::loop()
    {
       m_activeChannelList.clear();
       m_poller->poll(10000, &m_activeChannelList); // 3s
+
+      m_eventHandling = true;
       for(auto ch : m_activeChannelList)
       {
+         currentActiveChannel = ch; // set the current running channel
          ch->handleEvent();
       }
+      currentActiveChannel= nullptr;
+      m_eventHandling = false;
+      doPendingFunctors();
    }
 
    cout << "EventLoop(obj):" << this << " stop looping" << endl;
@@ -94,5 +103,77 @@ void EventLoop::updateChannel(Channel* ch)
 void EventLoop::quit()
 {
    m_quit = true;
+
+   // wakeup IO thread to quit
+   if(!isInLoopThread())
+   {
+      wakeup();
+   }
 }
+
+void EventLoop::runInLoop(const Functor &cb)
+{
+   if(isInLoopThread())
+   {
+      cb();
+   }
+   else
+   {
+      queueInLoop(cb);
+   }
+}
+
+TimerId EventLoop::runAt(const Timestamp &time, TimerCallback cb)
+{
+   return m_timerQueue->addTimer(cb,time,0.0);
+}
+
+TimerId EventLoop::runAfter(double delay, const TimerCallback cb)
+{
+   Timestamp time(addTime(Timestamp::now(), delay));
+   return runAt(time, cb);
+}
+
+TimerId EventLoop::runEvery(double interval, const TimerCallback cb)
+{
+   Timestamp time(addTime(Timestamp::now(), interval));
+   return m_timerQueue->addTimer(cb,time,interval);
+}
+
+void EventLoop::queueInLoop(const Functor &cb)
+{
+   // ref to: doPendingFunctors()
+   m_mutex.lock();
+   m_pendingFunctors.push_back(cb);
+   m_mutex.unlock();
+
+   if(!isInLoopThread() || m_callingPendingFunctors)
+   {
+      wakeup();
+   }
+}
+
+
+void EventLoop::doPendingFunctors()
+{
+   std::vector<Functor> functors;
+
+   m_callingPendingFunctors = true;
+   // ref to: queueInLoop()
+   m_mutex.lock();
+   functors.swap(m_pendingFunctors);
+   m_mutex.unlock();
+
+   for(auto functor : functors)
+   {
+      functor();
+   }
+   m_callingPendingFunctors = false;
+}
+
+void EventLoop::wakeup()
+{
+
+}
+
 

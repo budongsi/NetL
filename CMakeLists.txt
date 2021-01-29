@@ -9,7 +9,7 @@ SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
 SET(EXECUTABLE_OUTPUT_PATH bin)
 SET(LIBRARY_OUTPUT_PATH lib)
 
-include_directories(NetL)
+include_directories(NetL Base)
 
 link_libraries("C:/cygwin64/lib/libgtest.a")
 
@@ -65,11 +65,14 @@ add_executable(mtest_EventLoop+PollPoller+Channel
 
 ]]
 
-add_executable(mtest_EventLoop+PollPoller+Channel_01
-	 NetL/EventLoop.cpp
+add_executable(mtest_main
 	 NetL/PollPoller.cpp
 	 NetL/Channel.cpp
-	 test/mtest_EventLoop+PollPoller+Channel_01.cpp
+	 NetL/EventLoop.cpp
+	 Base/Timestamp.cpp
+	 NetL/Timer.cpp
+	 NetL/TimerQueue.cpp
+	 main.cpp
 )
 
 

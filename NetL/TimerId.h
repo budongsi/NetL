@@ -19,7 +19,7 @@ class Timer;
 ///
 /// An opaque identifier, for canceling Timer.
 ///
-class TimerId : public muduo::copyable
+class TimerId : public copyable
 {
  public:
   TimerId()

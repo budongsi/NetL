@@ -15,7 +15,7 @@ class Channel
 {
 public:
    // Define a type which is the "void()" prototype
-   using EventCallback = boost::function<void()>; 
+   using EventCallback = boost::function<void()>;
 
    // A Channel belongs to its own EventLoop, that means
    // a Channel can only be handled in one EventLoop
@@ -46,7 +46,9 @@ public:
    void disableReading() { m_events &= ~kReadEvent; update(); }
    void enableWriting() { m_events |= kWriteEvent; update(); }
    void disableWriting() { m_events &= ~kWriteEvent; update(); }
-   void disableALL() { m_events = kNoneEvent; update(); }
+   void disableAll() { m_events = kNoneEvent; update(); }
+   void remove() {
+   }
 
    // status check
    bool isWriting() const { return m_events & kWriteEvent; }
